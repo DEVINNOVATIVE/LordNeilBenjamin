@@ -1,5 +1,63 @@
 const mapImage = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/east-african-countries-2-xMLjbVd3mBnJYVxbq5csycRiAEif2T.png'
 
+const stats = [
+  { value: '10', label: 'Markets in view' },
+  { value: '3', label: 'Continents' },
+  { value: '01', label: 'Shared direction' },
+  { value: '5+', label: 'Years of impact' },
+]
+
 export function ImpactSection() {
-  return <section className="overflow-hidden bg-[var(--sand)] px-5 py-24 sm:px-8 lg:px-12 lg:py-32"><div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1fr_.9fr]"><div><p className="eyebrow text-[var(--gold-deep)]">The wider view</p><h2 className="mt-4 max-w-xl font-serif text-5xl leading-[.9] tracking-[-.04em] text-[var(--ink)] sm:text-7xl">Ideas travel. Impact stays.</h2><p className="mt-7 max-w-md text-base leading-8 text-[var(--muted-ink)]">From The Bahamas across West Africa and beyond, the work is grounded in connection — people, places, and the possibilities between them.</p><div className="mt-10 grid max-w-md grid-cols-2 gap-3"><div className="stat-card"><p className="font-serif text-4xl text-[var(--ink)]">10</p><p className="eyebrow mt-2 text-[var(--muted-ink)]">Markets in view</p></div><div className="stat-card"><p className="font-serif text-4xl text-[var(--ink)]">01</p><p className="eyebrow mt-2 text-[var(--muted-ink)]">Shared direction</p></div></div></div><div className="map-card relative rotate-2 overflow-hidden rounded-3xl border-8 border-white/70 bg-white shadow-2xl"><div className="absolute inset-0 z-10 bg-gradient-to-t from-[var(--ink)]/15 to-transparent" /><img src={mapImage} alt="Map showing West African markets" className="h-auto w-full mix-blend-multiply" /><div className="absolute bottom-5 left-5 z-20 rounded-full bg-white/80 px-4 py-2 text-[10px] uppercase tracking-[.18em] text-[var(--ink)] backdrop-blur">West Africa / In focus</div></div></div></section>
+  return (
+    <section className="bg-[var(--sand)] px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
+      <div className="mx-auto max-w-7xl">
+
+        {/* Top label */}
+        <p className="eyebrow text-[var(--gold-deep)]">The wider view</p>
+
+        {/* Two-col layout */}
+        <div className="mt-8 grid items-start gap-16 lg:grid-cols-[1.1fr_.9fr]">
+
+          {/* Left */}
+          <div>
+            <h2 className="max-w-xl font-serif text-5xl leading-[.92] tracking-[-.045em] text-[var(--ink)] sm:text-6xl">
+              Ideas travel.<br />Impact stays.
+            </h2>
+            <div className="mt-6 h-px w-16 bg-[var(--gold)]" />
+            <p className="mt-8 max-w-md text-[15px] leading-8 text-[var(--muted-ink)]">
+              From The Bahamas across West Africa and beyond, the work is grounded in connection — people, places, and the possibilities between them.
+            </p>
+
+            {/* Stat grid */}
+            <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
+              {stats.map((s) => (
+                <div key={s.label} className="rounded-2xl border border-black/8 bg-white/70 p-5 shadow-sm">
+                  <p className="font-serif text-4xl text-[var(--ink)]">{s.value}</p>
+                  <p className="eyebrow mt-2 text-[var(--muted-ink)]">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right — map */}
+          <div className="relative">
+            <div className="overflow-hidden rounded-3xl border border-black/8 bg-white shadow-[0_20px_60px_rgba(18,33,28,.12)]">
+              <img
+                src={mapImage}
+                alt="Map showing West African markets"
+                className="h-auto w-full"
+              />
+              <div className="border-t border-black/8 px-5 py-4">
+                <p className="text-[10px] uppercase tracking-[.2em] text-[var(--muted-ink)]">
+                  West Africa · In focus
+                </p>
+              </div>
+            </div>
+            {/* Accent block */}
+            <div className="absolute -right-3 -top-3 h-14 w-14 rounded-full border-2 border-[var(--gold)] bg-[var(--sand)]" />
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }
