@@ -1,5 +1,5 @@
-import { InteriorPage } from '@/components/site-header'
+import { BlogPage } from '@/components/blog/blog-page'
 
-export default function BlogPage() {
-  return <InteriorPage type="blog" />
+export default function Page() {
+  return <BlogPage />
 }

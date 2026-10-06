@@ -1,5 +1,5 @@
-import { InteriorPage } from '@/components/site-header'
+import { AboutPage } from '@/components/about/about-page'
 
-export default function AboutPage() {
-  return <InteriorPage type="about" />
+export default function Page() {
+  return <AboutPage />
 }
