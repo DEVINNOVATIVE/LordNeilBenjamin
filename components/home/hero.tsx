@@ -2,39 +2,173 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { motion } from 'motion/react'
+import { motion, AnimatePresence } from 'motion/react'
 
 const slides = [
   'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/img-20191021-wa0000%20%281%29-QDk948FnwjoJ9k7AOKGBfD5UiP2UUc.jpg',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/neil-uae-central-C5ilzOgM0oeviCf2oVqkMD8DIM72GQ.jpeg',
   'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/slider3-D6NjUkPxKpdl3ixAmvGWxUMnqkesKU.jpg',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/slider1-iKVXDrjHCnjeekxu0HslnYNG66E5nn.jpg',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bahamas-jjLXXo7pomxRIWXqqWOewqlMBDZih2.jpg',
 ]
 
 export function Hero() {
-  const [activeSlide, setActiveSlide] = useState(0)
-  useEffect(() => {
-    const timer = window.setInterval(() => setActiveSlide((current) => (current + 1) % slides.length), 5600)
-    return () => window.clearInterval(timer)
-  }, [])
-  const activeImage = slides[activeSlide]
+  const [active, setActive] = useState(0)
 
-  return <section className="hero-stage relative isolate min-h-[780px] overflow-hidden bg-[var(--ink)] px-5 pb-8 pt-32 text-white sm:px-8 lg:min-h-[900px] lg:px-12 lg:pt-40">
-    <motion.div key={activeImage} initial={{ opacity: 0, scale: 1.08 }} animate={{ opacity: 1, scale: 1.02 }} transition={{ duration: 1.3 }} className="absolute inset-0 -z-20 bg-cover bg-[center_20%]" style={{ backgroundImage: `url('${activeImage}')` }} />
-    <div className="absolute inset-0 -z-10 bg-[linear-gradient(110deg,rgba(9,21,17,.98)_0%,rgba(9,21,17,.87)_35%,rgba(9,21,17,.22)_75%,rgba(9,21,17,.7)_100%)]" />
-    <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_75%_20%,rgba(204,169,93,.32),transparent_28%)]" />
-    <div className="hero-orbit absolute right-[8%] top-[22%] -z-5 hidden size-[340px] rounded-full border border-[var(--gold)]/25 lg:block" />
-    <div className="hero-orbit hero-orbit-delayed absolute right-[16%] top-[14%] -z-5 hidden size-[490px] rounded-full border border-white/10 lg:block" />
-    <div className="mx-auto flex min-h-[695px] max-w-7xl flex-col justify-between">
-      <div className="grid items-start gap-12 lg:grid-cols-[1.05fr_.95fr]">
+  useEffect(() => {
+    const t = window.setInterval(() => setActive((c) => (c + 1) % slides.length), 5800)
+    return () => window.clearInterval(t)
+  }, [])
+
+  return (
+    <section className="relative isolate min-h-[100svh] overflow-hidden bg-[#0c1a15]">
+      {/* Full-bleed background — subtle, darkened */}
+      <AnimatePresence mode="sync">
+        <motion.div
+          key={slides[active]}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.4 }}
+          className="absolute inset-0 -z-20 bg-cover bg-center"
+          style={{ backgroundImage: `url('${slides[active]}')` }}
+        />
+      </AnimatePresence>
+      {/* Dark overlay — strong left, lighter right */}
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,#0c1a15_0%,rgba(12,26,21,.88)_42%,rgba(12,26,21,.4)_100%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_70%_40%,rgba(211,177,107,.18),transparent_55%)]" />
+
+      {/* Content */}
+      <div className="mx-auto grid min-h-[100svh] max-w-7xl grid-cols-1 items-center gap-12 px-5 pt-28 pb-12 sm:px-8 lg:grid-cols-2 lg:px-12 lg:pt-32">
+
+        {/* LEFT: Text */}
         <div>
-          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="flex items-center gap-3"><span className="size-2 rounded-full bg-[var(--gold)] shadow-[0_0_22px_8px_rgba(204,169,93,.25)]" /><p className="eyebrow text-[var(--gold)]">A personal perspective on progress</p></motion.div>
-          <motion.h1 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .12, duration: .85 }} className="mt-8 max-w-5xl font-serif text-[clamp(4.4rem,10.5vw,10rem)] leading-[.8] tracking-[-.075em]">Think <em className="text-[var(--gold)]">bigger.</em><br /><span className="ml-[8vw]">Build</span> <em className="text-[var(--gold)]">better.</em></motion.h1>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .45 }} className="mt-10 max-w-sm text-sm leading-7 text-white/72">Entrepreneur. Philanthropist. Builder of bridges between ambition and lasting impact.</motion.p>
-          <div className="mt-8 flex flex-wrap gap-3"><Link href="#story" className="rounded-full bg-[var(--gold)] px-6 py-3 text-xs font-semibold uppercase tracking-[.16em] text-[var(--ink)] transition hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(204,169,93,.25)]">Explore the story ↗</Link><Link href="/blog" className="rounded-full border border-white/30 px-6 py-3 text-xs uppercase tracking-[.16em] text-white transition hover:border-[var(--gold)] hover:text-[var(--gold)]">Read the journal</Link></div>
+          <motion.div
+            initial={{ opacity: 0, x: -18 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.65 }}
+            className="flex items-center gap-3"
+          >
+            <span className="size-2 rounded-full bg-[var(--gold)] shadow-[0_0_18px_6px_rgba(211,177,107,.3)]" />
+            <p className="eyebrow text-[var(--gold)]">A personal perspective on progress</p>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 32 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.12, duration: 0.85 }}
+            className="mt-8 font-serif text-[clamp(3.6rem,8.5vw,8.5rem)] leading-[.82] tracking-[-.06em] text-white"
+          >
+            Think <em className="text-[var(--gold)]">bigger.</em>
+            <br />
+            <span className="ml-[0.15em]">Build</span>{' '}
+            <em className="text-[var(--gold)]">better.</em>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.48 }}
+            className="mt-8 max-w-xs text-[15px] leading-7 text-white/70"
+          >
+            Entrepreneur. Philanthropist. Builder of bridges between ambition and lasting impact.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="mt-9 flex flex-wrap gap-3"
+          >
+            <Link
+              href="#story"
+              className="rounded-full bg-[var(--gold)] px-7 py-3.5 text-xs font-semibold uppercase tracking-[.16em] text-[var(--ink)] transition hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(211,177,107,.3)]"
+            >
+              Explore the story ↗
+            </Link>
+            <Link
+              href="/blog"
+              className="rounded-full border border-white/30 px-7 py-3.5 text-xs uppercase tracking-[.16em] text-white transition hover:border-[var(--gold)] hover:text-[var(--gold)]"
+            >
+              Read the journal
+            </Link>
+          </motion.div>
+
+          {/* Slide dots */}
+          <div className="mt-14 flex items-center gap-4">
+            <p className="eyebrow text-white/40">Nassau · London · Accra</p>
+            <div className="ml-4 flex gap-2" aria-label="Image navigation">
+              {slides.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  aria-label={`Image ${i + 1}`}
+                  onClick={() => setActive(i)}
+                  className={`h-[3px] rounded-full transition-all duration-500 ${i === active ? 'w-10 bg-[var(--gold)]' : 'w-3 bg-white/35 hover:bg-white/60'}`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
-        <motion.div initial={{ opacity: 0, rotate: 7, y: 30 }} animate={{ opacity: 1, rotate: 4, y: 0 }} transition={{ delay: .35, duration: .8 }} whileHover={{ rotate: 0, y: -8 }} className="hero-card relative mx-auto hidden w-72 rounded-2xl border border-white/25 bg-white/10 p-4 backdrop-blur-xl lg:block"><div className="absolute -right-9 top-14 grid size-20 place-items-center rounded-full border border-[var(--gold)]/50 bg-[var(--ink)]/80 text-center text-[9px] uppercase leading-4 tracking-[.16em] text-[var(--gold)]">Long<br />view<br />2026</div><div className="aspect-[4/5] overflow-hidden rounded-xl"><img src={activeImage} alt="Lord Neil Benjamin at work" className="h-full w-full object-cover saturate-50" /></div><div className="flex items-end justify-between pt-4"><div><p className="eyebrow text-[var(--gold)]">The long view</p><p className="mt-1 font-serif text-xl">Built for impact.</p></div><span className="grid size-9 place-items-center rounded-full border border-white/25 text-[var(--gold)]">↗</span></div></motion.div>
+
+        {/* RIGHT: Framed image panel */}
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.9 }}
+          className="relative hidden lg:flex lg:justify-end"
+        >
+          {/* Outer decorative ring */}
+          <div className="absolute -inset-6 rounded-[2.5rem] border border-[var(--gold)]/20" />
+          <div className="absolute -inset-12 rounded-[3rem] border border-white/8" />
+
+          {/* Main image box */}
+          <div className="relative w-[340px] overflow-hidden rounded-3xl border border-white/20 bg-white/5 p-2 shadow-[0_32px_80px_rgba(0,0,0,.55)] backdrop-blur-sm xl:w-[390px]">
+            <div className="relative overflow-hidden rounded-2xl">
+              <AnimatePresence mode="sync">
+                <motion.img
+                  key={slides[active]}
+                  src={slides[active]}
+                  alt="Lord Neil Benjamin"
+                  initial={{ opacity: 0, scale: 1.06 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1.1 }}
+                  className="aspect-[3/4] w-full object-cover"
+                />
+              </AnimatePresence>
+
+              {/* Inner overlay label */}
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0c1a15]/90 to-transparent p-5">
+                <p className="eyebrow text-[var(--gold)]">Lord Neil Benjamin Gibson</p>
+                <p className="mt-1 font-serif text-xl text-white leading-snug">Entrepreneur · Philanthropist</p>
+              </div>
+            </div>
+
+            {/* Corner badge */}
+            <div className="absolute -right-3 -top-3 flex size-16 items-center justify-center rounded-full border border-[var(--gold)]/50 bg-[#0c1a15] text-center text-[8px] uppercase leading-[1.5] tracking-[.14em] text-[var(--gold)]">
+              2026<br />NB
+            </div>
+          </div>
+
+          {/* Bottom floating stat */}
+          <div className="absolute -bottom-5 left-0 flex items-center gap-3 rounded-full border border-white/15 bg-[rgba(12,26,21,.8)] px-4 py-3 backdrop-blur-md">
+            <span className="font-serif text-2xl text-[var(--gold)]">10</span>
+            <span className="text-[10px] uppercase tracking-[.16em] text-white/60">Markets<br />in view</span>
+          </div>
+        </motion.div>
       </div>
-      <div className="flex flex-col gap-5 border-t border-white/25 pt-5 sm:flex-row sm:items-end sm:justify-between"><div className="flex items-center gap-5"><p className="eyebrow text-white/45">Nassau · London · Accra</p><div className="flex gap-1.5" aria-label="Hero image navigation">{slides.map((slide, index) => <button key={slide} type="button" aria-label={`Show image ${index + 1}`} onClick={() => setActiveSlide(index)} className={`h-1 rounded-full transition-all ${index === activeSlide ? 'w-10 bg-[var(--gold)]' : 'w-3 bg-white/35 hover:bg-white/70'}`} />)}</div></div><Link href="#story" aria-label="Scroll to story" className="group flex items-center gap-3 text-xs uppercase tracking-[.2em] text-[var(--gold)]">Scroll to explore <span className="grid size-8 place-items-center rounded-full border border-[var(--gold)]/50 transition group-hover:translate-y-1">↓</span></Link></div>
-    </div>
-  </section>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-6 right-8 hidden sm:block">
+        <Link
+          href="#story"
+          aria-label="Scroll to story"
+          className="group flex items-center gap-3 text-[10px] uppercase tracking-[.2em] text-[var(--gold)]"
+        >
+          Scroll
+          <span className="grid size-8 place-items-center rounded-full border border-[var(--gold)]/50 transition group-hover:translate-y-1">↓</span>
+        </Link>
+      </div>
+    </section>
+  )
 }
