@@ -5,10 +5,9 @@ import Link from 'next/link'
 import { motion, AnimatePresence } from 'motion/react'
 
 const slides = [
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/img-20191021-wa0000%20%281%29-QDk948FnwjoJ9k7AOKGBfD5UiP2UUc.jpg',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/neil-uae-central-C5ilzOgM0oeviCf2oVqkMD8DIM72GQ.jpeg',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/slider3-D6NjUkPxKpdl3ixAmvGWxUMnqkesKU.jpg',
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bahamas-jjLXXo7pomxRIWXqqWOewqlMBDZih2.jpg',
+  '/assets/slider1.jpg',
+  '/assets/slider2.jpg',
+  '/assets/slider3.jpg',
 ]
 
 export function Hero() {
@@ -35,49 +34,68 @@ export function Hero() {
       </AnimatePresence>
       {/* Dark overlay — strong left, lighter right */}
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,#0c1a15_0%,rgba(12,26,21,.88)_42%,rgba(12,26,21,.4)_100%)]" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_70%_40%,rgba(211,177,107,.18),transparent_55%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_72%_35%,rgba(211,177,107,.22),transparent_48%)]" />
+      <div className="absolute right-8 top-1/2 -z-10 hidden -translate-y-1/2 text-right lg:block">
+        <p className="eyebrow text-white/35">Independent perspective</p>
+        <p className="mt-3 font-serif text-2xl italic text-white/60">Est. 1980s · The Bahamas</p>
+      </div>
 
       {/* Content */}
-      <div className="mx-auto grid min-h-[100svh] max-w-7xl grid-cols-1 items-center gap-12 px-5 pt-28 pb-12 sm:px-8 lg:grid-cols-2 lg:px-12 lg:pt-32">
+      <div className="mx-auto flex min-h-[100svh] max-w-7xl items-center px-5 pt-28 pb-12 sm:px-8 lg:px-12 lg:pt-32">
 
         {/* LEFT: Text */}
         <div>
-          <motion.div
+          <motion.p
             initial={{ opacity: 0, x: -18 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.65 }}
-            className="flex items-center gap-3"
+            className="eyebrow text-[var(--gold)]"
           >
-            <span className="size-2 rounded-full bg-[var(--gold)] shadow-[0_0_18px_6px_rgba(211,177,107,.3)]" />
-            <p className="eyebrow text-[var(--gold)]">A personal perspective on progress</p>
-          </motion.div>
+            A personal perspective on progress
+          </motion.p>
 
           <motion.h1
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.12, duration: 0.85 }}
-            className="mt-8 font-serif text-[clamp(3.6rem,8.5vw,8.5rem)] leading-[.82] tracking-[-.06em] text-white"
+            className="mt-7 max-w-5xl font-serif text-[clamp(3.8rem,8.5vw,8.5rem)] leading-[.8] tracking-[-.07em] text-white"
           >
             Think <em className="text-[var(--gold)]">bigger.</em>
             <br />
-            <span className="ml-[0.15em]">Build</span>{' '}
+            <span className="ml-[0.12em]">Build</span>{' '}
             <em className="text-[var(--gold)]">better.</em>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.48 }}
-            className="mt-8 max-w-xs text-[15px] leading-7 text-white/70"
+            transition={{ delay: 0.42 }}
+            className="mt-9 text-[clamp(.9rem,1.5vw,1.35rem)] font-semibold uppercase tracking-[.2em] text-white"
           >
-            Entrepreneur. Philanthropist. Builder of bridges between ambition and lasting impact.
+            Entrepreneur <span className="mx-2 text-[var(--gold)]">·</span> Philanthropist
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ delay: 0.5, duration: 0.7 }}
+            className="mt-4 h-px w-full max-w-[520px] origin-left bg-[var(--gold)]"
+          />
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.58 }}
+            className="mt-4 text-[clamp(.95rem,1.8vw,1.5rem)] font-semibold uppercase tracking-[.16em] text-white/90"
+          >
+            Lord Neil Benjamin Gibson
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="mt-9 flex flex-wrap gap-3"
+            transition={{ delay: 0.7 }}
+            className="mt-8 flex flex-wrap gap-3"
           >
             <Link
               href="#story"
@@ -110,52 +128,6 @@ export function Hero() {
           </div>
         </div>
 
-        {/* RIGHT: Framed image panel */}
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.9 }}
-          className="relative hidden lg:flex lg:justify-end"
-        >
-          {/* Outer decorative ring */}
-          <div className="absolute -inset-6 rounded-[2.5rem] border border-[var(--gold)]/20" />
-          <div className="absolute -inset-12 rounded-[3rem] border border-white/8" />
-
-          {/* Main image box */}
-          <div className="relative w-[340px] overflow-hidden rounded-3xl border border-white/20 bg-white/5 p-2 shadow-[0_32px_80px_rgba(0,0,0,.55)] backdrop-blur-sm xl:w-[390px]">
-            <div className="relative overflow-hidden rounded-2xl">
-              <AnimatePresence mode="sync">
-                <motion.img
-                  key={slides[active]}
-                  src={slides[active]}
-                  alt="Lord Neil Benjamin"
-                  initial={{ opacity: 0, scale: 1.06 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1.1 }}
-                  className="aspect-[3/4] w-full object-cover"
-                />
-              </AnimatePresence>
-
-              {/* Inner overlay label */}
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0c1a15]/90 to-transparent p-5">
-                <p className="eyebrow text-[var(--gold)]">Lord Neil Benjamin Gibson</p>
-                <p className="mt-1 font-serif text-xl text-white leading-snug">Entrepreneur · Philanthropist</p>
-              </div>
-            </div>
-
-            {/* Corner badge */}
-            <div className="absolute -right-3 -top-3 flex size-16 items-center justify-center rounded-full border border-[var(--gold)]/50 bg-[#0c1a15] text-center text-[8px] uppercase leading-[1.5] tracking-[.14em] text-[var(--gold)]">
-              2026<br />NB
-            </div>
-          </div>
-
-          {/* Bottom floating stat */}
-          <div className="absolute -bottom-5 left-0 flex items-center gap-3 rounded-full border border-white/15 bg-[rgba(12,26,21,.8)] px-4 py-3 backdrop-blur-md">
-            <span className="font-serif text-2xl text-[var(--gold)]">10</span>
-            <span className="text-[10px] uppercase tracking-[.16em] text-white/60">Markets<br />in view</span>
-          </div>
-        </motion.div>
       </div>
 
       {/* Scroll indicator */}

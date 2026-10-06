@@ -7,5 +7,17 @@ import { JournalPreview } from './journal-preview'
 import { StorySection } from './story-section'
 
 export function HomePage() {
-  return <><div className="relative"><SiteHeader /><Hero /></div><StorySection /><ImpactSection /><FocusSection /><JournalPreview /><Footer /></>
+  return (
+    <>
+      <div className="relative overflow-hidden bg-[var(--ink)]">
+        <SiteHeader />
+        <Hero />
+      </div>
+      <StorySection />
+      <ImpactSection />
+      <FocusSection />
+      <JournalPreview />
+      <Footer />
+    </>
+  )
 }

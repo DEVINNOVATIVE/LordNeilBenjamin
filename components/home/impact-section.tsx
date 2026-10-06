@@ -9,18 +9,18 @@ const stats = [
 
 export function ImpactSection() {
   return (
-    <section className="bg-[var(--sand)] px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
+    <section className="relative overflow-hidden bg-[var(--sand)] px-5 py-24 sm:px-8 lg:px-12 lg:py-40">
       <div className="mx-auto max-w-7xl">
 
         {/* Top label */}
         <p className="eyebrow text-[var(--gold-deep)]">The wider view</p>
 
         {/* Two-col layout */}
-        <div className="mt-8 grid items-start gap-16 lg:grid-cols-[1.1fr_.9fr]">
+        <div className="mt-8 grid items-start gap-16 lg:grid-cols-[1fr_1fr] lg:gap-24">
 
           {/* Left */}
           <div>
-            <h2 className="max-w-xl font-serif text-5xl leading-[.92] tracking-[-.045em] text-[var(--ink)] sm:text-6xl">
+            <h2 className="max-w-xl font-serif text-5xl leading-[.9] tracking-[-.055em] text-[var(--ink)] sm:text-7xl">
               Ideas travel.<br />Impact stays.
             </h2>
             <div className="mt-6 h-px w-16 bg-[var(--gold)]" />
@@ -31,7 +31,7 @@ export function ImpactSection() {
             {/* Stat grid */}
             <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
               {stats.map((s) => (
-                <div key={s.label} className="rounded-2xl border border-black/8 bg-white/70 p-5 shadow-sm">
+                <div key={s.label} className="border-t border-black/15 py-5">
                   <p className="font-serif text-4xl text-[var(--ink)]">{s.value}</p>
                   <p className="eyebrow mt-2 text-[var(--muted-ink)]">{s.label}</p>
                 </div>
@@ -41,7 +41,7 @@ export function ImpactSection() {
 
           {/* Right — map */}
           <div className="relative">
-            <div className="overflow-hidden rounded-3xl border border-black/8 bg-white shadow-[0_20px_60px_rgba(18,33,28,.12)]">
+            <div className="overflow-hidden border border-black/10 bg-white shadow-[0_24px_70px_rgba(18,33,28,.14)]">
               <img
                 src={mapImage}
                 alt="Map showing West African markets"
@@ -54,7 +54,7 @@ export function ImpactSection() {
               </div>
             </div>
             {/* Accent block */}
-            <div className="absolute -right-3 -top-3 h-14 w-14 rounded-full border-2 border-[var(--gold)] bg-[var(--sand)]" />
+            <div className="absolute -right-4 -top-4 size-16 rounded-full border border-[var(--gold)] bg-[var(--sand)]" />
           </div>
         </div>
       </div>

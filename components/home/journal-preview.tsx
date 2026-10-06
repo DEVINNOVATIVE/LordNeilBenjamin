@@ -26,20 +26,20 @@ const posts = [
 
 export function JournalPreview() {
   return (
-    <section className="bg-[var(--paper)] px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
+    <section className="bg-[var(--paper)] px-5 py-24 sm:px-8 lg:px-12 lg:py-40">
       <div className="mx-auto max-w-7xl">
 
         {/* Header row */}
         <div className="flex flex-col gap-4 border-b border-black/8 pb-10 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="eyebrow text-[var(--gold-deep)]">From the journal</p>
-            <h2 className="mt-4 font-serif text-5xl leading-[.92] tracking-[-.045em] text-[var(--ink)] sm:text-6xl">
+            <h2 className="mt-4 max-w-2xl font-serif text-5xl leading-[.9] tracking-[-.055em] text-[var(--ink)] sm:text-7xl">
               Notes for the road ahead.
             </h2>
           </div>
           <Link
             href="/blog"
-            className="shrink-0 rounded-full border border-black/12 px-5 py-2.5 text-[11px] uppercase tracking-[.18em] text-[var(--ink)] transition hover:-translate-y-1 hover:bg-[var(--ink)] hover:text-white"
+            className="shrink-0 border border-black/15 px-5 py-3 text-[11px] uppercase tracking-[.18em] text-[var(--ink)] transition hover:-translate-y-1 hover:bg-[var(--ink)] hover:text-white"
           >
             View all ↗
           </Link>
@@ -51,10 +51,10 @@ export function JournalPreview() {
             <Link
               key={post.num}
               href="/blog"
-              className="group flex flex-col gap-5 border-b border-black/8 py-8 transition hover:bg-[var(--sand)]/40 sm:flex-row sm:items-center sm:gap-8 sm:px-4"
+              className="group flex flex-col gap-5 border-b border-black/10 py-8 transition hover:bg-[var(--sand)]/50 sm:flex-row sm:items-center sm:gap-8 sm:px-4"
             >
               {/* Image */}
-              <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl sm:aspect-square sm:w-28 sm:shrink-0 md:w-36">
+              <div className="aspect-[4/3] w-full overflow-hidden sm:aspect-square sm:w-28 sm:shrink-0 md:w-36">
                 <img
                   src={post.image}
                   alt=""
