@@ -1,4 +1,4 @@
-const mapImage = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/east-african-countries-2-xMLjbVd3mBnJYVxbq5csycRiAEif2T.png'
+const mapImage = './assets/east-african-countries-2.png'
 
 const stats = [
   { value: '10', label: 'Markets in view' },

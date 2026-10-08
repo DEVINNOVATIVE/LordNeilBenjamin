@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const storyImage = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/neil-uae-central-C5ilzOgM0oeviCf2oVqkMD8DIM72GQ.jpeg'
+const storyImage = './assets/lord-neil-benjamin.jpg'
 
 export function StorySection() {
   return (
