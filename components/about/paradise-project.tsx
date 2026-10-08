@@ -42,8 +42,8 @@ const details = [
   },
 ]
 
-export function ParadiseProject() {
-  const [isOpen, setIsOpen] = useState(false)
+export function ParadiseProject({ initiallyOpen = false }: { initiallyOpen?: boolean }) {
+  const [isOpen, setIsOpen] = useState(initiallyOpen)
 
   return (
     <section className="overflow-hidden bg-[var(--sand)] px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
