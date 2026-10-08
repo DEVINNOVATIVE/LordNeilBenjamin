@@ -1,26 +1,15 @@
-import Link from 'next/link'
 import { Footer } from '@/components/shared/footer'
-import { SiteHeader } from '@/components/shared/site-header'
+import { PageHero } from '@/components/shared/page-hero'
 
 const gallery = ['p1.jpeg', 'p2.jpeg', 'p3.jpeg', 'p4.jpeg', 'p5.jpeg', 'p6.jpeg', 'p7.jpeg', 'p8.jpeg', 'p9.jpeg', 'p10.jpeg', 'p11.jpeg', 'p12.jpeg', 'p13.jpeg', 'p14.jpeg', 'p15.jpeg']
 
 export function ParadisePage() {
   return (
     <>
-      <header className="relative overflow-hidden bg-[var(--ink)] text-white">
-        <SiteHeader active="about" />
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 pb-20 pt-40 sm:px-8 lg:grid-cols-[.9fr_1.1fr] lg:items-end lg:px-12 lg:pb-28">
-          <div>
-            <Link href="/about" className="eyebrow text-[var(--gold)] transition hover:text-white">← Back to about</Link>
-            <h1 className="mt-7 max-w-3xl font-serif text-[clamp(4rem,9vw,8.5rem)] leading-[.84] tracking-[-.06em]">Are you ready for <em className="text-[var(--gold)]">paradise?</em></h1>
-            <p className="mt-8 max-w-lg text-base leading-8 text-white/65">A modular, connected community designed for sustainable living, mobility, and opportunity in The Bahamas.</p>
-          </div>
-          <img src="/assets/paradise/p1.jpeg" alt="A modular Paradise community in The Bahamas" className="aspect-[4/3] w-full object-cover" />
-        </div>
-      </header>
+      <PageHero active="about" eyebrow="SNH Inc. Bahamas · Project detail" title={<>Are you ready for<br /><em className="text-[var(--gold)]">paradise?</em></>} identity="A modular, connected community" subtitle="Designed for sustainable living, mobility, and opportunity in The Bahamas." primaryAction={{ href: '#introduction', label: 'Explore the vision ↓' }} secondaryAction={{ href: '/about', label: 'Back to about' }} slides={['/assets/paradise/p1.jpeg', '/assets/paradise/p4.jpeg', '/assets/paradise/p10.jpeg']} sideLabel="The vision" sideValue="Modular · Connected · Human" locations="Homes · Mobility · Community" />
 
       <main className="bg-[var(--paper)]">
-        <section className="mx-auto max-w-4xl px-5 py-24 sm:px-8 lg:py-36">
+        <section id="introduction" className="mx-auto max-w-4xl px-5 py-24 sm:px-8 lg:py-36">
           <p className="eyebrow text-[var(--gold-deep)]">SNH Inc. Bahamas · Introduction</p>
           <h2 className="mt-5 max-w-3xl font-serif text-5xl leading-[.9] tracking-[-.05em] text-[var(--ink)] sm:text-7xl">A city that can grow with its people.</h2>
           <div className="mt-10 space-y-6 text-base leading-8 text-[var(--muted-ink)]">
@@ -32,6 +21,17 @@ export function ParadisePage() {
             <p>The hassle and cost of open houses would be a thing of the past for homeowners, as prospective movers would visit their destination locale without the need to disrupt the current owner since movers would be retaining their homes and simply executing a change of their surrounding environment.</p>
             <p>We will develop the equipment needed to (1) simplify the “last mile” home transportation process, akin to how the modern forklift has greatly simplified and sped up the process of moving pallets of material within a warehouse, and (2) site these homes to compatible foundational frameworks.</p>
             <p>Units will be designed with both simplicity and robustness in mind to enable their removal and siting within 2 days if within the same locale, the only difference in duration for further distances due to the transport itinerary. Due to the prefabricated nature of its construction, we project that up to 1000 modular units can be installed within one week.</p>
+          </div>
+        </section>
+
+        <section className="border-y border-black/10 bg-white/60 px-5 py-10 sm:px-8 lg:px-12">
+          <div className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-3">
+            {[['40 ft', 'standard home module'], ['2 days', 'local relocation target'], ['1000', 'units projected per week']].map(([value, label]) => (
+              <div key={value} className="flex items-center gap-4 border-l-2 border-[var(--gold)] pl-5">
+                <p className="font-serif text-4xl tracking-[-.04em] text-[var(--ink)]">{value}</p>
+                <p className="max-w-[130px] text-[10px] font-semibold uppercase leading-5 tracking-[.16em] text-[var(--muted-ink)]">{label}</p>
+              </div>
+            ))}
           </div>
         </section>
 
