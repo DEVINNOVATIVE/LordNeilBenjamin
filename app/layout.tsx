@@ -4,7 +4,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Lord Neil Benjamin | Purpose in Motion',
-  description: 'The official journal and portfolio of Lord Neil Benjamin Gibson — enterprise, philanthropy, and legacy.',
+  description: 'The official blog and portfolio of Lord Neil Benjamin Gibson — enterprise, philanthropy, and legacy.',
   generator: 'v0.app',
   icons: {
     icon: [

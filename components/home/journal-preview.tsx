@@ -393,7 +393,7 @@ function JourneyCard({ journey }: { journey: typeof journeys[0] }) {
   )
 }
 
-export function JournalPreview() {
+export function BlogPreview() {
   return (
     <section className="relative overflow-hidden bg-white px-5 py-12 sm:px-8 lg:px-12 lg:py-16">
       <div className="mx-auto max-w-6xl">
@@ -424,7 +424,7 @@ export function JournalPreview() {
         <div className="mt-14 border-t border-black/10 pt-10">
           <div className="mx-auto max-w-xl text-center">
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--gold-deep)]">
-              From the Journal
+              From the Blog
             </span>
             <h3 className="mt-2 font-serif text-2xl tracking-tight text-[var(--ink)] sm:text-3xl">
               {post.title}

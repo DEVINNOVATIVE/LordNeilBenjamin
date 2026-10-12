@@ -4,7 +4,6 @@ export type BlogEntry = {
   category: string
   title: string
   date: string
-  image: string
   excerpt: string
   paragraphs: string[]
 }
@@ -16,7 +15,6 @@ export const blogEntries: BlogEntry[] = [
     category: 'Humanitarian work',
     title: 'Lord Neil B Gibson – Ambassador of Goodwill',
     date: 'May 18, 2026',
-    image: '/assets/img-20191021-wa0000 (1).jpg',
     excerpt: 'A practical ambassador who turned empty shipping containers into a dependable route for books, clothing, computers, and school supplies.',
     paragraphs: [
       'The phrase “goodwill ambassador” is often applied to celebrities who draw attention to worthy causes. Lord Neil Benjamin Gibson’s work has been different: his ambassadorship has centered on practical action, resourcefulness, and partnerships that create real routes for aid.',
@@ -30,7 +28,6 @@ export const blogEntries: BlogEntry[] = [
     category: 'Global perspective',
     title: 'Lord Neil B Gibson’s Exploits Around the Globe',
     date: 'April 02, 2026',
-    image: '/assets/neil-uae-central.jpeg',
     excerpt: 'From West Africa and Belize to South Africa and New Orleans, a career shaped by alliances, travel, and a refusal to settle for easy answers.',
     paragraphs: [
       'An ambassadorial title and a humanitarian reputation can create a demanding schedule. Lord Neil Benjamin Gibson’s work has taken him across many regions, with projects shaped by local needs and the strength of the alliances behind them.',
@@ -44,7 +41,6 @@ export const blogEntries: BlogEntry[] = [
     category: 'Innovation',
     title: 'Can Lord Neil B Gibson Change the World One Shipping Container at a Time?',
     date: 'March 14, 2026',
-    image: '/assets/50ff0a71-afec-4de6-b2c8-5df2ef3afb37-1024x748.jpeg',
     excerpt: 'How an unusual logistics partnership created a new path for delivering humanitarian supplies to West Africa.',
     paragraphs: [
       'Successful humanitarian work often depends on creativity. Organizations may have supplies to share, while the cost and complexity of moving those supplies remain the obstacle. Lord Neil Benjamin Gibson’s West Africa initiative approached that obstacle from an unexpected direction.',
@@ -58,7 +54,6 @@ export const blogEntries: BlogEntry[] = [
     category: 'Profile',
     title: 'Who is Lord Neil B Gibson?',
     date: 'February 26, 2026',
-    image: '/assets/lord-neil-benjamin.jpg',
     excerpt: 'A portrait of a humanitarian whose work brings diplomacy, finance, and constructive change together.',
     paragraphs: [
       'Successful public figures are often defined by the opinions of others. Beyond his work with international governments, the financial sector, and humanitarian organizations, Lord Neil B Gibson describes his purpose simply: use his talents to create constructive change.',
@@ -72,7 +67,6 @@ export const blogEntries: BlogEntry[] = [
     category: 'Enterprise',
     title: 'Lord Neil B Gibson: Working with Royalty',
     date: 'January 19, 2026',
-    image: '/assets/img-20191021-wa0015 (1).jpg',
     excerpt: 'A look at the Lesotho work focused on infrastructure, natural resources, transportation, and long-term economic growth.',
     paragraphs: [
       'Between 2008 and 2011, Lord Neil B Gibson visited the Kingdom of Lesotho and developed relationships with members of the royal family, including Prince Seeiso and the King of Lesotho.',
@@ -86,7 +80,6 @@ export const blogEntries: BlogEntry[] = [
     category: 'Public service',
     title: 'Lord Neil B Gibson in the U.S.A.!',
     date: 'December 08, 2025',
-    image: '/assets/bahamas.jpg',
     excerpt: 'Humanitarian work is not limited by borders. New Orleans became another place where partnerships and funding could support recovery.',
     paragraphs: [
       'Humanitarian need is not limited to distant countries. The United States has faced its own crises, and New Orleans remains a powerful example of a city requiring long-term rebuilding after Hurricane Katrina.',
@@ -100,7 +93,6 @@ export const blogEntries: BlogEntry[] = [
     category: 'Timeline',
     title: 'Lord Neil B Gibson: Humanitarian Timeline',
     date: 'November 21, 2025',
-    image: '/assets/east-african-countries-2.png',
     excerpt: 'A chronological view of the ambassadorial work, global partnerships, and social initiatives that shaped a public career.',
     paragraphs: [
       'Lord Neil B Gibson’s humanitarian work spans many years and regions. A timeline helps bring the different phases of that work into focus without suggesting that any one chapter tells the whole story.',
@@ -114,7 +106,6 @@ export const blogEntries: BlogEntry[] = [
     category: 'Partnerships',
     title: 'Lord Neil B Gibson Partners With Twin Peaks Investment Group',
     date: 'October 13, 2025',
-    image: '/assets/Lord-Neil-Gibson-and-Erwin-Contreras (1).png',
     excerpt: 'A partnership focused on working alongside Lesotho’s economic growth strategy and improving quality of life for its citizens.',
     paragraphs: [
       'Lord Neil B. Gibson partnered with Twin Peaks Investment Group to support the economic growth strategy developed by the government of Lesotho.',
@@ -128,7 +119,6 @@ export const blogEntries: BlogEntry[] = [
     category: 'Rebuilding',
     title: 'Lord Neil B Gibson: Bringing Relief to Iraq',
     date: 'September 04, 2025',
-    image: '/assets/img-20191021-wa0000.jpg',
     excerpt: 'Rebuilding a nation requires more than one solution. Financial infrastructure, healthcare, and strong partners all matter.',
     paragraphs: [
       'In our highly politicized age, it is difficult to talk about Iraq in bipartisan terms. Regardless of the strategy and political maneuvering that shaped the military endeavors in that country, the Iraq we see today is one that desperately needs to be rebuilt into a peaceful and prosperous nation. Enacting positive change takes real leadership and clear ideas.',
@@ -142,7 +132,6 @@ export const blogEntries: BlogEntry[] = [
     category: 'Markets',
     title: 'Lord Neil B Gibson Reports Home Prices Rise in Most Major U.S. Cities; Las Vegas Holds Steady',
     date: 'August 12, 2025',
-    image: '/assets/slider2.jpg',
     excerpt: 'The Case-Shiller index showed prices rising in 12 of 20 major cities, offering an early sign of a slow housing recovery.',
     paragraphs: [
       'Home prices rose in March from February in most major U.S. cities for the first time in seven months. The increase was one of several signs that a slow recovery was taking shape in the housing market.',
@@ -157,7 +146,6 @@ export const blogEntries: BlogEntry[] = [
     category: 'Markets',
     title: 'Home Prices and the Slow Return of Confidence',
     date: 'July 28, 2025',
-    image: '/assets/slider3.jpg',
     excerpt: 'A second view of the housing report explores the signals behind a market that was improving, but not yet healed.',
     paragraphs: [
       'Home prices rose in March from February in most major U.S. cities for the first time in seven months. The Standard & Poor’s/Case-Shiller index showed gains in 12 of the 20 cities it tracks, with Tampa and Miami improving and Las Vegas unchanged.',

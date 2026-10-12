@@ -9,7 +9,7 @@ export function Hero() {
       identity="Entrepreneur · Philanthropist"
       subtitle="Lord Neil Benjamin Gibson"
       primaryAction={{ href: '#story', label: 'Explore the story ↗' }}
-      secondaryAction={{ href: '/blog', label: 'Read the journal' }}
+      secondaryAction={{ href: '/blog', label: 'Read the blog' }}
     />
   )
 }

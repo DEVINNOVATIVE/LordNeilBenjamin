@@ -4,12 +4,12 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'motion/react'
 
-type SiteHeaderProps = { active?: 'home' | 'about' | 'journal' }
+type SiteHeaderProps = { active?: 'home' | 'about' | 'blog' }
 
 const links = [
   { href: '/', label: 'Home', key: 'home' as const },
   { href: '/about', label: 'About', key: 'about' as const },
-  { href: '/blog', label: 'Journal', key: 'journal' as const },
+  { href: '/blog', label: 'Blog', key: 'blog' as const },
 ]
 
 export function SiteHeader({ active = 'home' }: SiteHeaderProps) {

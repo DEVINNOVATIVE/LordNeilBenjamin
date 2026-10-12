@@ -36,7 +36,7 @@ export function Footer() {
             <div className="mt-5 flex flex-col gap-3 text-[14px] text-white/55">
               <Link href="/" className="transition hover:text-white">Home</Link>
               <Link href="/about" className="transition hover:text-white">About</Link>
-              <Link href="/blog" className="transition hover:text-white">Journal</Link>
+              <Link href="/blog" className="transition hover:text-white">Blog</Link>
             </div>
           </div>
           <div>

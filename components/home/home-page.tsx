@@ -2,7 +2,7 @@ import { Footer } from '@/components/shared/footer'
 import { FocusSection } from './focus-section'
 import { Hero } from './hero'
 import { ImpactSection } from './impact-section'
-import { JournalPreview } from './journal-preview'
+import { BlogPreview } from './journal-preview'
 import { StorySection } from './story-section'
 
 export function HomePage() {
@@ -12,7 +12,7 @@ export function HomePage() {
       <StorySection />
       <ImpactSection />
       <FocusSection />
-      <JournalPreview />
+      <BlogPreview />
       <Footer />
     </>
   )

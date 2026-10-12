@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import { SiteHeader } from './site-header'
 
 type PageHeroProps = {
-  active: 'home' | 'about' | 'journal'
+  active: 'home' | 'about' | 'blog'
   eyebrow: string
   title: ReactNode
   subtitle: string
