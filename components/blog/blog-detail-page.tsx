@@ -1,39 +1,44 @@
 import Link from 'next/link'
 import { Footer } from '@/components/shared/footer'
-import { PageHero } from '@/components/shared/page-hero'
-import { blogEntries, getBlogEntry, type BlogEntry } from '@/lib/blog-data'
+import { SiteHeader } from '@/components/shared/site-header'
+import { getAllBlogEntries, getBlogEntry, type BlogEntry } from '@/lib/blog-data'
 
 export function BlogDetailPage({ entry }: { entry: BlogEntry }) {
-  const currentIndex = blogEntries.findIndex((e) => e.slug === entry.slug)
-  const prevEntry = currentIndex > 0 ? blogEntries[currentIndex - 1] : null
-  const nextEntry = currentIndex < blogEntries.length - 1 ? blogEntries[currentIndex + 1] : null
+  const allEntries = getAllBlogEntries()
+  const currentIndex = allEntries.findIndex((e) => e.slug === entry.slug)
+  const prevEntry = currentIndex > 0 ? allEntries[currentIndex - 1] : null
+  const nextEntry = currentIndex < allEntries.length - 1 ? allEntries[currentIndex + 1] : null
+  const image = entry.image || (currentIndex >= 0 ? allEntries[currentIndex].image : '/assets/slider1.jpg')
 
   return (
     <>
-      <PageHero
-        active="blog"
-        eyebrow={`${entry.category} · ${entry.date}`}
-        title={<>{entry.title}</>}
-        identity="The blog"
-        subtitle={entry.excerpt}
-        primaryAction={{ href: '#article', label: 'Read the article ↓' }}
-        secondaryAction={{ href: '/blog', label: 'Back to blog' }}
-        sideLabel="Blog entry"
-        sideValue={`${entry.number} · Long view`}
-        locations="Perspective · Practice · Progress"
-      />
-      <main id="article" className="bg-[var(--paper)] px-5 py-20 sm:px-8 lg:px-12 lg:py-32">
+      <header className="relative isolate overflow-hidden bg-[#0c1a15] text-white">
+        <SiteHeader active="blog" />
+        <div className="absolute inset-0 -z-10">
+          <img src={image} alt={entry.title} className="h-full w-full object-cover opacity-30" />
+        </div>
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#0c1a15_30%,rgba(12,26,21,.95)_85%)]" />
+        <div className="mx-auto max-w-4xl px-5 pb-20 pt-32 sm:px-8 lg:pt-40">
+          <Link href="/blog" className="text-[11px] font-semibold uppercase tracking-[.18em] text-[var(--gold)] transition hover:text-white">← Back to blog</Link>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <span className="rounded-full bg-[var(--gold)] px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[.16em] text-[var(--ink)]">{entry.category}</span>
+            <span className="text-[11px] uppercase tracking-[.16em] text-white/50">{entry.date}</span>
+            <span className="font-serif text-2xl text-white/40">{entry.number}</span>
+          </div>
+          <h1 className="mt-6 max-w-3xl font-serif text-[clamp(2rem,5vw,3.5rem)] leading-[1.05] tracking-[-.04em] text-white">
+            {entry.title}
+          </h1>
+          <p className="mt-6 max-w-2xl text-base leading-7 text-white/70">{entry.excerpt}</p>
+        </div>
+      </header>
+
+      <main className="bg-[var(--paper)] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
         <article className="mx-auto max-w-3xl">
-          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-black/10 pb-7">
-            <span className="rounded-full bg-[var(--sand)] px-4 py-2 text-[10px] font-semibold uppercase tracking-[.16em] text-[var(--ink)]">{entry.category}</span>
-            <p className="text-xs uppercase tracking-[.16em] text-[var(--muted-ink)]">{entry.date}</p>
+          <div className="overflow-hidden rounded-2xl">
+            <img src={image} alt={entry.title} className="aspect-[16/9] w-full object-cover" />
           </div>
 
-          <div className="mt-3 select-none">
-            <span className="font-serif text-[8rem] leading-none text-[var(--gold-deep)]/15">{entry.number}</span>
-          </div>
-
-          <div className="-mt-8 space-y-8 text-[18px] leading-9 text-[var(--muted-ink)]">
+          <div className="mt-10 space-y-8 text-[18px] leading-9 text-[var(--muted-ink)]">
             {entry.paragraphs.map((paragraph, index) => (
               <p key={index} className={index === 0 ? 'font-serif text-[22px] leading-9 text-[var(--ink)]' : ''}>
                 {paragraph}
@@ -41,7 +46,7 @@ export function BlogDetailPage({ entry }: { entry: BlogEntry }) {
             ))}
           </div>
 
-          <div className="mt-16 border-t border-black/10 pt-8">
+          <div className="mt-14 border-t border-black/10 pt-8">
             <p className="eyebrow text-[var(--gold-deep)]">Author</p>
             <p className="mt-3 font-serif text-2xl text-[var(--ink)]">Lord Neil Benjamin Gibson</p>
           </div>

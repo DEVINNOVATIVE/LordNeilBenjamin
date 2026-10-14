@@ -5,7 +5,42 @@ export type BlogEntry = {
   title: string
   date: string
   excerpt: string
+  image: string
   paragraphs: string[]
+}
+
+const imagePool = [
+  '/assets/slider1.jpg',
+  '/assets/slider2.jpg',
+  '/assets/slider3.jpg',
+  '/assets/bahamas.jpg',
+  '/assets/lord-neil-benjamin.jpg',
+  '/assets/neil-uae-central.jpeg',
+  '/assets/img-20191021-wa0000 (1).jpg',
+  '/assets/img-20191021-wa0015 (1).jpg',
+  '/assets/50ff0a71-afec-4de6-b2c8-5df2ef3afb37-1024x748.jpeg',
+  '/assets/Lord-Neil-Gibson-and-Erwin-Contreras (1).png',
+  '/assets/east-african-countries-2.png',
+  '/assets/paradise/p1.jpeg',
+  '/assets/paradise/p4.jpeg',
+  '/assets/paradise/p10.jpeg',
+  '/assets/crypus_football/c1.jpeg',
+  '/assets/hong_kong/hk1.jpeg',
+]
+
+function imageForEntry(slug: string, index: number): string {
+  if (slug.includes('iraq')) return '/assets/img-20191021-wa0000.jpg'
+  if (slug.includes('lesotho')) return '/assets/east-african-countries-2.png'
+  if (slug.includes('belize')) return '/assets/Lord-Neil-Gibson-and-Erwin-Contreras (1).png'
+  if (slug.includes('west-africa') || slug.includes('ambassador') || slug.includes('shipping-container')) return '/assets/img-20191021-wa0000 (1).jpg'
+  if (slug.includes('bahamas') || slug.includes('paradise') || slug.includes('modular')) return '/assets/paradise/p1.jpeg'
+  if (slug.includes('vegas') || slug.includes('ferris') || slug.includes('arena') || slug.includes('fight-night')) return '/assets/slider2.jpg'
+  if (slug.includes('uae') || slug.includes('blockchain') || slug.includes('dubai')) return '/assets/neil-uae-central.jpeg'
+  if (slug.includes('hong-kong') || slug.includes('crypto')) return '/assets/hong_kong/hk1.jpeg'
+  if (slug.includes('football') || slug.includes('sport') || slug.includes('boxing') || slug.includes('bullriding')) return '/assets/crypus_football/c1.jpeg'
+  if (slug.includes('usa') || slug.includes('orleans')) return '/assets/bahamas.jpg'
+  if (slug.includes('seed')) return '/assets/50ff0a71-afec-4de6-b2c8-5df2ef3afb37-1024x748.jpeg'
+  return imagePool[index % imagePool.length]
 }
 
 export const blogEntries: BlogEntry[] = [
@@ -1097,5 +1132,11 @@ export const blogEntries: BlogEntry[] = [
 ]
 
 export function getBlogEntry(slug: string) {
-  return blogEntries.find((entry) => entry.slug === slug)
+  const entry = blogEntries.find((entry) => entry.slug === slug)
+  if (!entry) return undefined
+  return { ...entry, image: entry.image || imageForEntry(entry.slug, blogEntries.indexOf(entry)) }
+}
+
+export function getAllBlogEntries(): BlogEntry[] {
+  return blogEntries.map((entry, index) => ({ ...entry, image: entry.image || imageForEntry(entry.slug, index) }))
 }
