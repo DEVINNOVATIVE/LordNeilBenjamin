@@ -1,22 +1,28 @@
 import Link from 'next/link'
 import { Footer } from '@/components/shared/footer'
 import { SiteHeader } from '@/components/shared/site-header'
-import { getAllBlogEntries, getBlogEntry, type BlogEntry } from '@/lib/blog-data'
+import { blogPlaceholderImage, getAllBlogEntries, getBlogEntry, type BlogEntry } from '@/lib/blog-data'
 
 export function BlogDetailPage({ entry }: { entry: BlogEntry }) {
   const allEntries = getAllBlogEntries()
   const currentIndex = allEntries.findIndex((e) => e.slug === entry.slug)
   const prevEntry = currentIndex > 0 ? allEntries[currentIndex - 1] : null
   const nextEntry = currentIndex < allEntries.length - 1 ? allEntries[currentIndex + 1] : null
-  const image = entry.image || (currentIndex >= 0 ? allEntries[currentIndex].image : '/assets/slider1.jpg')
+  const image = entry.image ?? blogPlaceholderImage
 
   return (
     <>
       <header className="relative isolate overflow-hidden bg-[#0c1a15] text-white">
         <SiteHeader active="blog" />
-        <div className="absolute inset-0 -z-10">
-          <img src={image} alt={entry.title} className="h-full w-full object-cover opacity-30" />
-        </div>
+        {image && (
+          <div className="absolute inset-0 -z-10">
+            <img
+              src={image}
+              alt=""
+              className="h-full w-full object-cover opacity-30"
+            />
+          </div>
+        )}
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#0c1a15_30%,rgba(12,26,21,.95)_85%)]" />
         <div className="mx-auto max-w-4xl px-5 pb-20 pt-32 sm:px-8 lg:pt-40">
           <Link href="/blog" className="text-[11px] font-semibold uppercase tracking-[.18em] text-[var(--gold)] transition hover:text-white">← Back to blog</Link>
@@ -34,9 +40,15 @@ export function BlogDetailPage({ entry }: { entry: BlogEntry }) {
 
       <main className="bg-[var(--paper)] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
         <article className="mx-auto max-w-3xl">
-          <div className="overflow-hidden rounded-2xl">
-            <img src={image} alt={entry.title} className="aspect-[16/9] w-full object-cover" />
-          </div>
+          {image && (
+            <div className="overflow-hidden rounded-2xl">
+              <img
+                src={image}
+                alt={entry.title}
+                className="aspect-[16/9] w-full object-cover"
+              />
+            </div>
+          )}
 
           <div className="mt-10 space-y-8 text-[18px] leading-9 text-[var(--muted-ink)]">
             {entry.paragraphs.map((paragraph, index) => (

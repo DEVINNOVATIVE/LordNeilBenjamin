@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Footer } from '@/components/shared/footer'
 import { SiteHeader } from '@/components/shared/site-header'
-import { getAllBlogEntries } from '@/lib/blog-data'
+import { blogPlaceholderImage, getAllBlogEntries } from '@/lib/blog-data'
 
 const entriesPerPage = 9
 
@@ -22,7 +22,9 @@ function getPageNumbers(current: number, total: number): (number | string)[] {
 
 export function BlogPage() {
   const [page, setPage] = useState(1)
-  const allEntries = getAllBlogEntries()
+  const allEntries = [...getAllBlogEntries()].sort(
+    (a, b) => Number(Boolean(b.image)) - Number(Boolean(a.image)),
+  )
   const pageCount = Math.ceil(allEntries.length / entriesPerPage)
   const visibleEntries = allEntries.slice((page - 1) * entriesPerPage, page * entriesPerPage)
   const pageNumbers = getPageNumbers(page, pageCount)
@@ -51,14 +53,21 @@ export function BlogPage() {
       <main id="entries" className="bg-[var(--paper)] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {visibleEntries.map((entry) => (
-              <Link
+            {visibleEntries.map((entry) => {
+              const image = entry.image ?? blogPlaceholderImage
+
+              return (
+                <Link
                 key={entry.slug}
                 href={`/blog/${entry.slug}`}
                 className="group flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white transition duration-300 hover:-translate-y-1.5 hover:border-[var(--gold-deep)]/40 hover:shadow-[0_20px_50px_rgba(18,33,28,.08)]"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-[var(--sand)]">
-                  <img src={entry.image} alt={entry.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                  <img
+                    src={image}
+                    alt={entry.title}
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
                   <span className="absolute left-4 top-4 rounded-full bg-[var(--ink)]/85 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[.16em] text-white backdrop-blur-sm">{entry.category}</span>
                   <span className="absolute bottom-4 right-4 font-serif text-3xl text-white/90 drop-shadow-lg">{entry.number}</span>
                 </div>
@@ -72,8 +81,9 @@ export function BlogPage() {
                     <span className="transition group-hover:translate-x-1">→</span>
                   </div>
                 </div>
-              </Link>
-            ))}
+                </Link>
+              )
+            })}
           </div>
 
           {pageCount > 1 && (
