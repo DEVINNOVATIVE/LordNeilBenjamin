@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Footer } from '@/components/shared/footer'
 import { SiteHeader } from '@/components/shared/site-header'
+import { MotionReveal, MotionTag } from '@/components/shared/motion-reveal'
 import { blogPlaceholderImage, getAllBlogEntries, getBlogEntry, type BlogEntry } from '@/lib/blog-data'
 
 export function BlogDetailPage({ entry }: { entry: BlogEntry }) {
@@ -27,7 +28,7 @@ export function BlogDetailPage({ entry }: { entry: BlogEntry }) {
         <div className="mx-auto max-w-4xl px-5 pb-20 pt-32 sm:px-8 lg:pt-40">
           <Link href="/blog" className="text-[11px] font-semibold uppercase tracking-[.18em] text-[var(--gold)] transition hover:text-white">← Back to blog</Link>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <span className="rounded-full bg-[var(--gold)] px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[.16em] text-[var(--ink)]">{entry.category}</span>
+            <MotionTag className="rounded-full bg-[var(--gold)] px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[.16em] text-[var(--ink)]">{entry.category}</MotionTag>
             <span className="text-[11px] uppercase tracking-[.16em] text-white/50">{entry.date}</span>
             <span className="font-serif text-2xl text-white/40">{entry.number}</span>
           </div>
@@ -39,7 +40,7 @@ export function BlogDetailPage({ entry }: { entry: BlogEntry }) {
       </header>
 
       <main className="bg-[var(--paper)] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
-        <article className="mx-auto max-w-3xl">
+        <MotionReveal className="mx-auto max-w-3xl">
           {image && (
             <div className="overflow-hidden rounded-2xl">
               <img
@@ -81,7 +82,7 @@ export function BlogDetailPage({ entry }: { entry: BlogEntry }) {
           <div className="mt-10 text-center">
             <Link href="/blog" className="inline-flex rounded-full bg-[var(--ink)] px-7 py-3.5 text-xs font-semibold uppercase tracking-[.16em] text-white transition hover:-translate-y-1 hover:shadow-lg">Back to all articles</Link>
           </div>
-        </article>
+        </MotionReveal>
       </main>
       <Footer />
     </>

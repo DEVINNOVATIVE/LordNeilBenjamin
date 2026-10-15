@@ -1,3 +1,5 @@
+import { MotionReveal, MotionTag } from '@/components/shared/motion-reveal'
+
 const mapImage = './assets/east-african-countries-2.png'
 
 const stats = [
@@ -10,10 +12,10 @@ const stats = [
 export function ImpactSection() {
   return (
     <section className="relative overflow-hidden bg-[var(--sand)] px-5 py-24 sm:px-8 lg:px-12 lg:py-40">
-      <div className="mx-auto max-w-7xl">
+      <MotionReveal className="mx-auto max-w-7xl">
 
         {/* Top label */}
-        <p className="eyebrow text-[var(--gold-deep)]">The wider view</p>
+        <MotionTag className="eyebrow text-[var(--gold-deep)]">The wider view</MotionTag>
 
         {/* Two-col layout */}
         <div className="mt-8 grid items-start gap-16 lg:grid-cols-[1fr_1fr] lg:gap-24">
@@ -57,7 +59,7 @@ export function ImpactSection() {
             <div className="absolute -right-4 -top-4 size-16 rounded-full border border-[var(--gold)] bg-[var(--sand)]" />
           </div>
         </div>
-      </div>
+      </MotionReveal>
     </section>
   )
 }

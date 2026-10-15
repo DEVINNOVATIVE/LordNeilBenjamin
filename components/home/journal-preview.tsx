@@ -332,7 +332,7 @@ function JourneyCard({ journey }: { journey: typeof journeys[0] }) {
     <article className="flex flex-col justify-between rounded-xl border border-black/10 bg-white p-3 shadow-sm sm:p-4">
       <div className="space-y-2">
         {/* 1. Main Display Image (Top) */}
-        <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg bg-stone-100">
+        <div className="relative aspect-[11/9] w-full overflow-hidden rounded-lg bg-stone-100">
           <img
             src={activeImage}
             alt={journey.label}

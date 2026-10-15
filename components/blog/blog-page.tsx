@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Footer } from '@/components/shared/footer'
+import { MotionReveal, MotionTag } from '@/components/shared/motion-reveal'
 import { SiteHeader } from '@/components/shared/site-header'
 import { blogPlaceholderImage, getAllBlogEntries } from '@/lib/blog-data'
 
@@ -57,18 +58,18 @@ export function BlogPage() {
               const image = entry.image ?? blogPlaceholderImage
 
               return (
-                <Link
-                key={entry.slug}
-                href={`/blog/${entry.slug}`}
-                className="group flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white transition duration-300 hover:-translate-y-1.5 hover:border-[var(--gold-deep)]/40 hover:shadow-[0_20px_50px_rgba(18,33,28,.08)]"
-              >
+                <MotionReveal key={entry.slug} delay={0.04 * (visibleEntries.indexOf(entry) % 3)}>
+                  <Link
+                  href={`/blog/${entry.slug}`}
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-black/10 bg-white transition duration-300 hover:-translate-y-1.5 hover:border-[var(--gold-deep)]/40 hover:shadow-[0_20px_50px_rgba(18,33,28,.08)]"
+                >
                 <div className="relative aspect-[16/10] overflow-hidden bg-[var(--sand)]">
                   <img
                     src={image}
                     alt={entry.title}
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
-                  <span className="absolute left-4 top-4 rounded-full bg-[var(--ink)]/85 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[.16em] text-white backdrop-blur-sm">{entry.category}</span>
+                  <MotionTag className="absolute left-4 top-4 rounded-full bg-[var(--ink)]/85 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[.16em] text-white backdrop-blur-sm">{entry.category}</MotionTag>
                   <span className="absolute bottom-4 right-4 font-serif text-3xl text-white/90 drop-shadow-lg">{entry.number}</span>
                 </div>
 
@@ -81,7 +82,8 @@ export function BlogPage() {
                     <span className="transition group-hover:translate-x-1">→</span>
                   </div>
                 </div>
-                </Link>
+                  </Link>
+                </MotionReveal>
               )
             })}
           </div>

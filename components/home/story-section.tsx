@@ -1,11 +1,12 @@
 import Link from 'next/link'
+import { MotionReveal, MotionTag } from '@/components/shared/motion-reveal'
 
 const storyImage = './assets/lord-neil-benjamin.jpg'
 
 export function StorySection() {
   return (
     <section id="story" className="relative overflow-hidden bg-[var(--paper)] px-5 py-24 sm:px-8 lg:px-12 lg:py-40">
-      <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-24">
+      <MotionReveal className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-24">
 
         {/* Image column */}
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
@@ -26,7 +27,7 @@ export function StorySection() {
 
         {/* Text column */}
         <div>
-          <p className="eyebrow text-[var(--gold-deep)]">The story</p>
+          <MotionTag className="eyebrow text-[var(--gold-deep)]">The story</MotionTag>
           <h2 className="mt-4 max-w-xl font-serif text-5xl leading-[.9] tracking-[-.055em] text-[var(--ink)] sm:text-7xl">
             A life measured by what it makes possible.
           </h2>
@@ -47,7 +48,7 @@ export function StorySection() {
           <span className="text-[11px] uppercase tracking-[.18em] text-[var(--muted-ink)]">Nassau · London · Accra</span>
           </div>
         </div>
-      </div>
+      </MotionReveal>
     </section>
   )
 }

@@ -124,6 +124,8 @@
 }
 
 .eyebrow { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.28em; line-height: 1.4; text-transform: uppercase; }
+.motion-reveal { will-change: opacity, transform; }
+.motion-tag { will-change: opacity, transform; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }
 
 @layer base {

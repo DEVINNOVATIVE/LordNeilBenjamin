@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'motion/react'
+import { MotionReveal, MotionTag } from '@/components/shared/motion-reveal'
 
 const items = [
   { num: '01', title: 'Enterprise', copy: 'Backing people and ventures that move economies forward.', icon: '◆' },
@@ -11,12 +12,12 @@ const items = [
 export function FocusSection() {
   return (
     <section className="relative overflow-hidden bg-[var(--ink)] px-5 py-24 text-white sm:px-8 lg:px-12 lg:py-40">
-      <div className="mx-auto max-w-7xl">
+      <MotionReveal className="mx-auto max-w-7xl">
 
         {/* Heading row */}
         <div className="flex flex-col gap-6 border-b border-white/12 pb-12 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="eyebrow text-[var(--gold)]">The focus</p>
+            <MotionTag className="eyebrow text-[var(--gold)]">The focus</MotionTag>
             <h2 className="mt-4 max-w-lg font-serif text-5xl leading-[.9] tracking-[-.055em] sm:text-7xl">
               Three ways to leave things better.
             </h2>
@@ -46,7 +47,7 @@ export function FocusSection() {
             </motion.article>
           ))}
         </div>
-      </div>
+      </MotionReveal>
     </section>
   )
 }

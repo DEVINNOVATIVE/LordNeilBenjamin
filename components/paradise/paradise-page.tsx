@@ -1,4 +1,5 @@
 import { Footer } from '@/components/shared/footer'
+import { MotionReveal, MotionTag } from '@/components/shared/motion-reveal'
 import { PageHero } from '@/components/shared/page-hero'
 
 const gallery = ['p1.jpeg', 'p2.jpeg', 'p3.jpeg', 'p4.jpeg', 'p5.jpeg', 'p6.jpeg', 'p7.jpeg', 'p8.jpeg', 'p9.jpeg', 'p10.jpeg', 'p11.jpeg', 'p12.jpeg', 'p13.jpeg', 'p14.jpeg', 'p15.jpeg']
@@ -10,7 +11,8 @@ export function ParadisePage() {
 
       <main className="bg-[var(--paper)]">
         <section id="introduction" className="mx-auto max-w-4xl px-5 py-24 sm:px-8 lg:py-36">
-          <p className="eyebrow text-[var(--gold-deep)]">SNH Inc. Bahamas · Introduction</p>
+          <MotionReveal>
+          <MotionTag className="eyebrow text-[var(--gold-deep)]">SNH Inc. Bahamas · Introduction</MotionTag>
           <h2 className="mt-5 max-w-3xl font-serif text-5xl leading-[.9] tracking-[-.05em] text-[var(--ink)] sm:text-7xl">A city that can grow with its people.</h2>
           <div className="mt-10 space-y-6 text-base leading-8 text-[var(--muted-ink)]">
             <p>Our vision is to build a city composed of modular units that can be readily added to or removed from a framework to meet rising demand, accommodate the social mobility of owners who wish to upgrade their living spaces, and simplify the moving process.</p>
@@ -22,22 +24,23 @@ export function ParadisePage() {
             <p>We will develop the equipment needed to (1) simplify the “last mile” home transportation process, akin to how the modern forklift has greatly simplified and sped up the process of moving pallets of material within a warehouse, and (2) site these homes to compatible foundational frameworks.</p>
             <p>Units will be designed with both simplicity and robustness in mind to enable their removal and siting within 2 days if within the same locale, the only difference in duration for further distances due to the transport itinerary. Due to the prefabricated nature of its construction, we project that up to 1000 modular units can be installed within one week.</p>
           </div>
+          </MotionReveal>
         </section>
 
         <section className="border-y border-black/10 bg-white/60 px-5 py-10 sm:px-8 lg:px-12">
-          <div className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-3">
+          <MotionReveal className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-3">
             {[['40 ft', 'standard home module'], ['2 days', 'local relocation target'], ['1000', 'units projected per week']].map(([value, label]) => (
               <div key={value} className="flex items-center gap-4 border-l-2 border-[var(--gold)] pl-5">
                 <p className="font-serif text-4xl tracking-[-.04em] text-[var(--ink)]">{value}</p>
                 <p className="max-w-[130px] text-[10px] font-semibold uppercase leading-5 tracking-[.16em] text-[var(--muted-ink)]">{label}</p>
               </div>
             ))}
-          </div>
+          </MotionReveal>
         </section>
 
         <section className="bg-[var(--sand)] px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
-          <div className="mx-auto max-w-7xl">
-            <p className="eyebrow text-[var(--gold-deep)]">Connected living</p>
+          <MotionReveal className="mx-auto max-w-7xl">
+            <MotionTag className="eyebrow text-[var(--gold-deep)]">Connected living</MotionTag>
             <div className="mt-5 grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
               <h2 className="font-serif text-5xl leading-[.9] tracking-[-.05em] text-[var(--ink)] sm:text-7xl">Mobility, care, and community built in.</h2>
               <div className="space-y-6 text-base leading-8 text-[var(--muted-ink)]">
@@ -49,12 +52,13 @@ export function ParadisePage() {
                 <p>Off-grid solar-powered super capacitor stations can be designed and developed to provide a means for harvesting electrical energy and rapidly supplying charge to or receiving charge from vehicles.</p>
               </div>
             </div>
-          </div>
+          </MotionReveal>
         </section>
 
         <section className="mx-auto grid max-w-7xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:px-12 lg:py-36">
+          <MotionReveal className="contents">
           <div>
-            <p className="eyebrow text-[var(--gold-deep)]">A community of possibility</p>
+            <MotionTag className="eyebrow text-[var(--gold-deep)]">A community of possibility</MotionTag>
             <h2 className="mt-5 max-w-2xl font-serif text-5xl leading-[.9] tracking-[-.05em] text-[var(--ink)] sm:text-7xl">Services that meet residents where they are.</h2>
             <div className="mt-8 space-y-6 text-base leading-8 text-[var(--muted-ink)]">
               <p>Integrated into this transportation system are mobile medical and dental care provider units catered to the individual needs of a patient in the event of an emergency.</p>
@@ -64,18 +68,19 @@ export function ParadisePage() {
               <p>A wearable human-powered exoskeleton will be developed to enable the elderly and the handicapped to perform difficult physical tasks such as moving furniture or other large objects. This equipment would be offered to residents on a rental.</p>
             </div>
           </div>
+          </MotionReveal>
           <img src="/assets/paradise/p10.jpeg" alt="Outdoor community space in Paradise" className="aspect-[4/5] w-full object-cover" />
         </section>
 
         <section className="bg-[var(--ink)] px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
-          <div className="mx-auto max-w-7xl">
-            <p className="eyebrow text-[var(--gold)]">The vision in pictures</p>
+          <MotionReveal className="mx-auto max-w-7xl">
+            <MotionTag className="eyebrow text-[var(--gold)]">The vision in pictures</MotionTag>
             <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
               {gallery.map((image, index) => (
                 <img key={image} src={`/assets/paradise/${image}`} alt={`Paradise modular home concept ${index + 1}`} className="aspect-square w-full object-cover transition hover:opacity-80" />
               ))}
             </div>
-          </div>
+          </MotionReveal>
         </section>
       </main>
       <Footer />
