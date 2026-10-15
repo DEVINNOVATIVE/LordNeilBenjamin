@@ -318,9 +318,9 @@ const post = {
   title: 'Lord Gibson Attends Future Blockchain Summit',
   copy: 'The largest gathering of Blockchain enthusiasts in the world gathered in Dubai’s World Trade Centre.',
   images: [
-    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/img-20191021-wa0015%20%281%29-7vj5mSHble7tL9auwwio5hJ1swTZZy.jpg',
-    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/neil-uae-central-C5ilzOgM0oeviCf2oVqkMD8DIM72GQ.jpeg',
-    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Lord-Neil-Gibson-and-Erwin-Contreras%20%281%29-5aV1UIGgH3a1YEvlBwRqe9jWHIk7zu.png',
+    '/assets/journal-blockchain-team.jpg',
+    '/assets/journal-blockchain-portrait.jpeg',
+    '/assets/journal-blockchain-belize.png',
   ],
 }
 

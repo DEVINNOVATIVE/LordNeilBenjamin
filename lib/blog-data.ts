@@ -828,7 +828,7 @@ export const blogEntries: BlogEntry[] = [
     number: '63',
     category: 'Public service',
     title: 'Lord Neil B. Gibson and Associates Support Ralph Huang',
-    image: 'https://www.lordneilbenjamingibson.com/wp-content/uploads/2014/03/ralphhuang.png',
+    image: '/assets/blog-ralph-huang.png',
     date: '2014',
     excerpt: 'Business organizations announced support for Ralph Huang’s United Democratic Party candidacy in Belize and cited their experience working with him.',
     paragraphs: [
@@ -880,7 +880,7 @@ export const blogEntries: BlogEntry[] = [
     number: '67',
     category: 'Public service',
     title: 'Lord Neil Gibson Responds to Online Belize Allegations',
-    image: 'https://www.lordneilbenjamingibson.com/wp-content/uploads/2022/01/banner.jpg',
+    image: '/assets/blog-banner.jpg',
     date: '2014',
     excerpt: 'A historical response addressed online claims about Lord Neil Gibson, Ralph Huang’s campaign, and political relationships in Belize.',
     paragraphs: [
@@ -984,7 +984,7 @@ export const blogEntries: BlogEntry[] = [
     number: '75',
     category: 'Global perspective',
     title: 'Belize Signs a Major Economic Cooperation Agreement with the UAE',
-    image: 'https://www.lordneilbenjamingibson.com/wp-content/uploads/2022/01/img-20191021-wa0000.jpg',
+    image: '/assets/blog-uae-agreement.jpg',
     date: 'October 09, 2019',
     excerpt: 'Belize and the United Arab Emirates established a framework for cooperation in trade, investment, infrastructure, energy, agriculture, and tourism.',
     paragraphs: [
@@ -999,7 +999,7 @@ export const blogEntries: BlogEntry[] = [
     number: '76',
     category: 'Innovation',
     title: 'Executive Summary: Bahamas LNBG/SNH Modular City Project',
-    image: 'https://www.lordneilbenjamingibson.com/wp-content/uploads/2022/01/bahamas.jpg',
+    image: '/assets/blog-bahamas.jpg',
     date: '2019',
     excerpt: 'A proposed Bahamas community used relocatable modular homes, renewable energy, connected transport, and resident-focused services as its foundation.',
     paragraphs: [
@@ -1014,7 +1014,7 @@ export const blogEntries: BlogEntry[] = [
     number: '77',
     category: 'Technology',
     title: 'Lord Gibson Attends the Future Blockchain Summit',
-    image: 'https://www.lordneilbenjamingibson.com/wp-content/uploads/2022/01/block-change-lord-neil-gibson.jpeg',
+    image: '/assets/blog-blockchain.jpeg',
     date: '2019',
     excerpt: 'A Dubai blockchain event connected property interests, digital land records, and the growing importance of cybersecurity in the Middle East.',
     paragraphs: [
@@ -1028,7 +1028,7 @@ export const blogEntries: BlogEntry[] = [
     number: '78',
     category: 'People and place',
     title: 'Why Greatness Attracts Greatness',
-    image: 'https://www.lordneilbenjamingibson.com/wp-content/uploads/2022/01/cropped-lord-neil-gibson-logo.png',
+    image: '/assets/blog-logo.png',
     date: '2019',
     excerpt: 'A personal profile described Lord Neil Gibson’s friendship with Welsh rugby player Alex Cuthbert and a shared appreciation for time, sport, and ambition.',
     paragraphs: [
@@ -1055,7 +1055,7 @@ export const blogEntries: BlogEntry[] = [
     number: '80',
     category: 'Heritage',
     title: 'Temple Newsam: A Connection to Lord Neil Gibson',
-    image: 'https://www.lordneilbenjamingibson.com/wp-content/uploads/2022/01/cropped-cropped-lord-neil-gibson-logo.png',
+    image: '/assets/blog-logo-cropped.png',
     date: '2019',
     excerpt: 'A Yorkshire heritage feature explored Temple Newsam’s Tudor, Jacobean, royal, and Knights Templar associations.',
     paragraphs: [
