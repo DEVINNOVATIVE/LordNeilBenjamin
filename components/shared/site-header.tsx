@@ -27,7 +27,7 @@ export function SiteHeader({ active = 'home' }: SiteHeaderProps) {
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-3 text-white">
 
-          <span className=" text-[var(--gold)] transition  group-hover:text-[var(--ink)] text-[11px] font-semibold uppercase tracking-[0.22em] sm:inline">Lord Neil Benjamin</span>
+          <span className=" text-[var(--gold)] transition   text-[11px] font-semibold uppercase tracking-[0.22em] sm:inline">Lord Neil Benjamin</span>
         </Link>
 
         {/* Center nav */}
