@@ -7,7 +7,7 @@ const gallery = ['p1.jpeg', 'p2.jpeg', 'p3.jpeg', 'p4.jpeg', 'p5.jpeg', 'p6.jpeg
 export function ParadisePage() {
   return (
     <>
-      <PageHero active="about" eyebrow="SNH Inc. Bahamas · Project detail" title={<>Are you ready for<br /><em className="text-[var(--gold)]">paradise?</em></>} identity="A modular, connected community" subtitle="Designed for sustainable living, mobility, and opportunity in The Bahamas." primaryAction={{ href: '#introduction', label: 'Explore the vision ↓' }} secondaryAction={{ href: '/about', label: 'Back to about' }} slides={['/assets/paradise/p1.jpeg', '/assets/paradise/p4.jpeg', '/assets/paradise/p10.jpeg']} sideLabel="The vision" sideValue="Modular · Connected · Human" locations="Homes · Mobility · Community" />
+      <PageHero active="paradise" eyebrow="SNH Inc. Bahamas · Project detail" title={<>Are you ready for<br /><em className="text-[var(--gold)]">paradise?</em></>} identity="A modular, connected community" subtitle="Designed for sustainable living, mobility, and opportunity in The Bahamas." primaryAction={{ href: '#introduction', label: 'Explore the vision ↓' }} secondaryAction={{ href: '/about', label: 'Back to about' }} slides={['/assets/paradise/p1.jpeg', '/assets/paradise/p4.jpeg', '/assets/paradise/p10.jpeg']} sideLabel="The vision" sideValue="Modular · Connected · Human" locations="Homes · Mobility · Community" />
 
       <main className="bg-[var(--paper)]">
         <section id="introduction" className="mx-auto max-w-4xl px-5 py-24 sm:px-8 lg:py-36">

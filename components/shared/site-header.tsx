@@ -4,11 +4,14 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'motion/react'
 
-type SiteHeaderProps = { active?: 'home' | 'about' | 'blog' }
+type SiteHeaderProps = { active?: 'home' | 'about' | 'work' | 'mission' | 'paradise' | 'blog' }
 
 const links = [
   { href: '/', label: 'Home', key: 'home' as const },
   { href: '/about', label: 'About', key: 'about' as const },
+  { href: '/work', label: 'Work', key: 'work' as const },
+  { href: '/mission', label: 'Mission', key: 'mission' as const },
+  { href: '/paradise', label: 'Paradise', key: 'paradise' as const },
   { href: '/blog', label: 'Blog', key: 'blog' as const },
 ]
 
