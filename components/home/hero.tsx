@@ -10,6 +10,10 @@ export function Hero() {
       subtitle="Lord Neil Benjamin Gibson"
       primaryAction={{ href: '#story', label: 'Explore the story ↗' }}
       secondaryAction={{ href: '/blog', label: 'Read the blog' }}
+      slides={['/assets/neil-uae-central.jpeg', '/assets/about-partnership.png', '/assets/about-team.jpg']}
+      sideLabel="A life in motion"
+      sideValue="Ideas · Impact · Legacy"
+      locations="The Bahamas · Europe · Africa"
     />
   )
 }

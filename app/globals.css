@@ -48,14 +48,14 @@
 
 :root {
   color-scheme: light;
-  --paper: #f6f3ed;
-  --sand: #e9e2d5;
-  --ink: #12211c;
-  --muted-ink: #667069;
-  --gold: #d3b16b;
-  --gold-deep: #9f7c38;
-  --background: #f6f3ed;
-  --foreground: #12211c;
+  --paper: #f5f6f0;
+  --sand: #e4e9df;
+  --ink: #101b18;
+  --muted-ink: #68756d;
+  --gold: #d4ad63;
+  --gold-deep: #987335;
+  --background: #f5f6f0;
+  --foreground: #101b18;
   --card: #fcfaf6;
   --card-foreground: #12211c;
   --popover: #fcfaf6;
@@ -124,6 +124,9 @@
 }
 
 .eyebrow { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.28em; line-height: 1.4; text-transform: uppercase; }
+.hero-shell::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(115deg, rgba(255,255,255,.05), transparent 35%, transparent 70%, rgba(212,173,99,.08)); mix-blend-mode: screen; }
+.hero-orb { animation: hero-float 8s ease-in-out infinite; }
+@keyframes hero-float { 0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); } 50% { transform: translate3d(0, -16px, 0) rotate(3deg); } }
 .motion-reveal { will-change: opacity, transform; }
 .motion-tag { will-change: opacity, transform; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }
