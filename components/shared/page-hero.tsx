@@ -42,7 +42,7 @@ export function PageHero({
   }, [slides.length])
 
   return (
-    <section className="hero-shell relative isolate min-h-[min(820px,100svh)] overflow-hidden bg-[#101b18] text-white">
+    <section className="hero-shell relative isolate min-h-[min(820px,100svh)] overflow-hidden bg-[#101b18] text-white selection:bg-[var(--gold)] selection:text-[var(--ink)]">
       <SiteHeader active={active} />
       <AnimatePresence mode="sync">
         <motion.div

@@ -22,25 +22,25 @@ export function SiteHeader({ active = 'home' }: SiteHeaderProps) {
       initial={{ opacity: 0, y: -14 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.55 }}
-      className="absolute inset-x-0 top-0 z-30 px-4 py-5 sm:px-8 lg:px-12"
+      className="absolute inset-x-0 top-0 z-30 px-4 py-4 sm:px-8 lg:px-12"
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between border-b border-white/20 px-1 pb-4 sm:px-2">
+      <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/15 bg-[#101b18]/35 px-3 py-2 shadow-2xl shadow-black/10 backdrop-blur-xl sm:px-4">
 
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-3 text-white">
 
-          <span className=" text-[var(--gold)] transition   text-[11px] font-semibold uppercase tracking-[0.22em] sm:inline">Lord Neil Benjamin</span>
+          <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--gold)] transition sm:text-[11px] sm:tracking-[0.22em]">Lord Neil Benjamin</span>
         </Link>
 
         {/* Center nav */}
-        <nav aria-label="Primary navigation" className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 text-[10px] uppercase tracking-[0.2em] lg:flex">
+        <nav aria-label="Primary navigation" className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 text-[10px] uppercase tracking-[0.2em] lg:flex">
           {links.map((link) => (
             <Link
               key={link.key}
               href={link.href}
-              className={`relative py-2 transition ${
+              className={`relative rounded-full px-3 py-2 transition ${
                 active === link.key
-                  ? 'text-white after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:bg-[var(--gold)]'
+                  ? 'bg-white/10 text-white after:absolute after:inset-x-3 after:bottom-0.5 after:h-px after:bg-[var(--gold)]'
                   : 'text-white/60 hover:text-white'
               }`}
             >
@@ -58,7 +58,7 @@ export function SiteHeader({ active = 'home' }: SiteHeaderProps) {
             aria-expanded={menuOpen}
             aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             onClick={() => setMenuOpen((open) => !open)}
-            className="grid size-10 place-items-center rounded-full border border-white/25 text-white lg:hidden"
+            className="grid size-10 place-items-center rounded-full border border-white/25 bg-white/5 text-white transition hover:border-[var(--gold)] hover:text-[var(--gold)] lg:hidden"
           >
             <span className="text-lg leading-none">{menuOpen ? '×' : '≡'}</span>
           </button>
