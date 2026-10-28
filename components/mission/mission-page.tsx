@@ -9,6 +9,12 @@ const principles = [
   ['03', 'Legacy', 'Creating a blueprint for progress that outlives the moment.'],
 ]
 
+const commitments = [
+  ['Listen locally', 'Every meaningful partnership begins with attention to the people who know a place best.'],
+  ['Share access', 'Opportunity should open doors for communities, creators, and the next generation of leaders.'],
+  ['Stay accountable', 'Long-term work requires clear commitments, honest learning, and progress that can be seen.'],
+]
+
 export function MissionPage() {
   return (
     <>
@@ -61,6 +67,26 @@ export function MissionPage() {
                 <article key={number} className="border-t-2 border-[var(--gold)] bg-white p-8">
                   <span className="text-[11px] font-semibold tracking-[.22em] text-[var(--gold-deep)]">{number}</span>
                   <h3 className="mt-16 font-serif text-4xl text-[var(--ink)]">{title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-[var(--muted-ink)]">{copy}</p>
+                </article>
+              ))}
+            </div>
+          </MotionReveal>
+        </section>
+
+        <section className="bg-[var(--sand)] px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
+          <MotionReveal className="mx-auto max-w-7xl">
+            <MotionTag className="eyebrow text-[var(--gold-deep)]">Putting values to work</MotionTag>
+            <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_.9fr] lg:items-end">
+              <h2 className="max-w-3xl font-serif text-5xl leading-[.9] tracking-[-.05em] text-[var(--ink)] sm:text-7xl">A mission is measured in the choices made every day.</h2>
+              <p className="max-w-md text-[15px] leading-8 text-[var(--muted-ink)]">
+                The wider vision becomes practical through small, consistent decisions: who is invited in, what is built to last, and how success is shared.
+              </p>
+            </div>
+            <div className="mt-14 grid gap-4 md:grid-cols-3">
+              {commitments.map(([title, copy]) => (
+                <article key={title} className="border-l-2 border-[var(--gold)] bg-white/70 p-7">
+                  <h3 className="font-serif text-3xl text-[var(--ink)]">{title}</h3>
                   <p className="mt-4 text-sm leading-7 text-[var(--muted-ink)]">{copy}</p>
                 </article>
               ))}

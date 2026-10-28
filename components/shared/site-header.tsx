@@ -11,7 +11,6 @@ const links = [
   { href: '/about', label: 'About', key: 'about' as const },
   { href: '/work', label: 'Work', key: 'work' as const },
   { href: '/mission', label: 'Mission', key: 'mission' as const },
-  { href: '/paradise', label: 'Paradise', key: 'paradise' as const },
   { href: '/blog', label: 'Blog', key: 'blog' as const },
 ]
 
