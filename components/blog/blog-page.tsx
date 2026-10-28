@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Footer } from '@/components/shared/footer'
 import { MotionReveal, MotionTag } from '@/components/shared/motion-reveal'
-import { SiteHeader } from '@/components/shared/site-header'
+import { PageHero } from '@/components/shared/page-hero'
 import { blogPlaceholderImage, getAllBlogEntries } from '@/lib/blog-data'
 
 const entriesPerPage = 9
@@ -36,20 +36,19 @@ export function BlogPage() {
 
   return (
     <>
-      <header className="relative isolate min-h-[420px] overflow-hidden bg-[#0c1a15] text-white">
-        <SiteHeader active="blog" />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,#0c1a15_0%,rgba(12,26,21,.88)_42%,rgba(12,26,21,.4)_100%)]" />
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_72%_35%,rgba(211,177,107,.18),transparent_48%)]" />
-        <div className="mx-auto flex min-h-[420px] max-w-7xl flex-col justify-end px-5 pb-16 pt-32 sm:px-8 lg:px-12 lg:pt-36">
-          <p className="eyebrow text-[var(--gold)]">The blog</p>
-          <h1 className="mt-6 max-w-5xl font-serif text-[clamp(3rem,7vw,6rem)] leading-[.85] tracking-[-.06em] text-white">
-            Words in <em className="text-[var(--gold)]">motion.</em>
-          </h1>
-          <p className="mt-8 max-w-2xl text-base leading-7 text-white/70">
-            {allEntries.length} essays on enterprise, philanthropy, markets, sport, and the long view — from West Africa to Las Vegas, Belize to Lesotho.
-          </p>
-        </div>
-      </header>
+      <PageHero
+        active="blog"
+        eyebrow="The journal"
+        title={<>Words in<br /><em className="text-[var(--gold)]">motion.</em></>}
+        identity="Ideas, places, and the long view"
+        subtitle={`${allEntries.length} essays on enterprise, philanthropy, markets, sport, and the people shaping what comes next.`}
+        primaryAction={{ href: '#entries', label: 'Read the journal ↓' }}
+        secondaryAction={{ href: '/mission', label: 'Explore the mission' }}
+        slides={['/assets/journal-blockchain-team.jpg', '/assets/journal-blockchain-portrait.jpeg', '/assets/about-partnership.png']}
+        sideLabel="The journal"
+        sideValue="Ideas · Context · Perspective"
+        locations="The Bahamas · West Africa · Beyond"
+      />
 
       <main id="entries" className="bg-[var(--paper)] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
         <div className="mx-auto max-w-7xl">

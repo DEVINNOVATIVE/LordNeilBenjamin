@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Footer } from '@/components/shared/footer'
-import { SiteHeader } from '@/components/shared/site-header'
 import { MotionReveal, MotionTag } from '@/components/shared/motion-reveal'
+import { PageHero } from '@/components/shared/page-hero'
 import { blogPlaceholderImage, getAllBlogEntries, getBlogEntry, type BlogEntry } from '@/lib/blog-data'
 
 export function BlogDetailPage({ entry }: { entry: BlogEntry }) {
@@ -13,33 +13,21 @@ export function BlogDetailPage({ entry }: { entry: BlogEntry }) {
 
   return (
     <>
-      <header className="relative isolate overflow-hidden bg-[#0c1a15] text-white">
-        <SiteHeader active="blog" />
-        {image && (
-          <div className="absolute inset-0 -z-10">
-            <img
-              src={image}
-              alt=""
-              className="h-full w-full object-cover opacity-30"
-            />
-          </div>
-        )}
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#0c1a15_30%,rgba(12,26,21,.95)_85%)]" />
-        <div className="mx-auto max-w-4xl px-5 pb-20 pt-32 sm:px-8 lg:pt-40">
-          <Link href="/blog" className="text-[11px] font-semibold uppercase tracking-[.18em] text-[var(--gold)] transition hover:text-white">← Back to blog</Link>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <MotionTag className="rounded-full bg-[var(--gold)] px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[.16em] text-[var(--ink)]">{entry.category}</MotionTag>
-            <span className="text-[11px] uppercase tracking-[.16em] text-white/50">{entry.date}</span>
-            <span className="font-serif text-2xl text-white/40">{entry.number}</span>
-          </div>
-          <h1 className="mt-6 max-w-3xl font-serif text-[clamp(2rem,5vw,3.5rem)] leading-[1.05] tracking-[-.04em] text-white">
-            {entry.title}
-          </h1>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-white/70">{entry.excerpt}</p>
-        </div>
-      </header>
+      <PageHero
+        active="blog"
+        eyebrow={`${entry.category} · ${entry.date}`}
+        title={<>{entry.title}</>}
+        identity={`Dispatch ${entry.number} · The journal`}
+        subtitle={entry.excerpt}
+        primaryAction={{ href: '#article', label: 'Read the article ↓' }}
+        secondaryAction={{ href: '/blog', label: 'Back to journal' }}
+        slides={[image, '/assets/journal-blockchain-team.jpg', '/assets/about-partnership.png']}
+        sideLabel="The journal"
+        sideValue="Context · Perspective · Motion"
+        locations="The Bahamas · West Africa · Beyond"
+      />
 
-      <main className="bg-[var(--paper)] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+      <main id="article" className="bg-[var(--paper)] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
         <MotionReveal className="mx-auto max-w-3xl">
           {image && (
             <div className="overflow-hidden rounded-2xl">

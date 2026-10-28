@@ -290,8 +290,10 @@ export function AboutPage() {
         subtitle="Global investments, diplomatic corridors, and the delicate duty of stewarding sustainable futures."
         primaryAction={{ href: '/paradise', label: 'Explore the vision ↗' }}
         secondaryAction={{ href: '/blog', label: 'Archival dispatches' }}
+        slides={[portraitImage, teamImage, partnershipImage]}
         sideLabel="Core doctrine"
         sideValue="Integrity · Sovereignty · Legacy"
+        locations="The Bahamas · West Africa · Beyond"
       />
 
       <main>
