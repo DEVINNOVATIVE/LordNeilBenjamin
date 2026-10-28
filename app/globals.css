@@ -131,8 +131,12 @@
 .section-frame::before { content: ''; position: absolute; left: 1.25rem; top: 1.25rem; width: 3rem; height: 3rem; border-left: 1px solid rgba(152,115,53,.42); border-top: 1px solid rgba(152,115,53,.42); pointer-events: none; }
 .soft-grid { background-image: linear-gradient(rgba(16,27,24,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(16,27,24,.045) 1px, transparent 1px); background-size: 32px 32px; }
 
-.hero-shell::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(115deg, rgba(255,255,255,.05), transparent 35%, transparent 70%, rgba(212,173,99,.08)); mix-blend-mode: screen; }
+.hero-shell::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at 78% 28%, rgba(212,173,99,.14), transparent 24%), linear-gradient(115deg, rgba(255,255,255,.05), transparent 35%, transparent 70%, rgba(212,173,99,.08)); mix-blend-mode: screen; }
+.hero-image-frame { box-shadow: 24px 28px 0 rgba(212,173,99,.12), 0 30px 80px rgba(0,0,0,.28); transform: rotate(1.5deg); transition: transform .7s cubic-bezier(.22,1,.36,1), box-shadow .7s ease; }
+.hero-image-frame:hover { transform: rotate(0deg) translateY(-6px); box-shadow: 28px 34px 0 rgba(212,173,99,.18), 0 34px 90px rgba(0,0,0,.34); }
+.hero-note { animation: hero-note-float 7s ease-in-out infinite; }
 .hero-orb { animation: hero-float 8s ease-in-out infinite; }
+@keyframes hero-note-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 @keyframes hero-float { 0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); } 50% { transform: translate3d(0, -16px, 0) rotate(3deg); } }
 .motion-reveal { will-change: opacity, transform; }
 .motion-tag { will-change: opacity, transform; }
