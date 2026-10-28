@@ -1,6 +1,6 @@
 import { MotionReveal, MotionTag } from '@/components/shared/motion-reveal'
 
-const mapImage = './assets/east-african-countries-2.png'
+const mapImage = '/assets/east-african-countries-2.png'
 
 const stats = [
   { value: '10', label: 'Markets in view' },
@@ -11,7 +11,7 @@ const stats = [
 
 export function ImpactSection() {
   return (
-    <section className="relative overflow-hidden bg-[var(--sand)] px-5 py-24 sm:px-8 lg:px-12 lg:py-40">
+    <section className="section-frame soft-grid relative overflow-hidden bg-[var(--sand)] px-5 py-24 sm:px-8 lg:px-12 lg:py-40">
       <MotionReveal className="mx-auto max-w-7xl">
 
         {/* Top label */}

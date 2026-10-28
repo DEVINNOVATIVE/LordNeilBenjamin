@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import { MotionReveal, MotionTag } from '@/components/shared/motion-reveal'
 
-const storyImage = './assets/lord-neil-benjamin.jpg'
+const storyImage = '/assets/lord-neil-benjamin.jpg'
 
 export function StorySection() {
   return (
-    <section id="story" className="relative overflow-hidden bg-[var(--paper)] px-5 py-24 sm:px-8 lg:px-12 lg:py-40">
+    <section id="story" className="section-frame relative overflow-hidden bg-[var(--paper)] px-5 py-24 sm:px-8 lg:px-12 lg:py-40">
       <MotionReveal className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-24">
 
         {/* Image column */}

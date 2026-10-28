@@ -124,6 +124,10 @@
 }
 
 .eyebrow { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.28em; line-height: 1.4; text-transform: uppercase; }
+.section-frame { position: relative; }
+.section-frame::before { content: ''; position: absolute; left: 1.25rem; top: 1.25rem; width: 3rem; height: 3rem; border-left: 1px solid rgba(152,115,53,.42); border-top: 1px solid rgba(152,115,53,.42); pointer-events: none; }
+.soft-grid { background-image: linear-gradient(rgba(16,27,24,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(16,27,24,.045) 1px, transparent 1px); background-size: 32px 32px; }
+
 .hero-shell::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(115deg, rgba(255,255,255,.05), transparent 35%, transparent 70%, rgba(212,173,99,.08)); mix-blend-mode: screen; }
 .hero-orb { animation: hero-float 8s ease-in-out infinite; }
 @keyframes hero-float { 0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); } 50% { transform: translate3d(0, -16px, 0) rotate(3deg); } }
