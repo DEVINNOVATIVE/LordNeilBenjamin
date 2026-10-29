@@ -33,16 +33,77 @@ export function MissionPage() {
       />
 
       <main className="bg-[var(--sand)]">
-        <section id="mission" className="mx-auto grid max-w-7xl gap-14 px-5 py-24 sm:px-8 lg:grid-cols-[.9fr_1.1fr] lg:px-12 lg:py-36">
-          <MotionReveal>
-            <MotionTag className="eyebrow text-[var(--gold-deep)]">A connected mission</MotionTag>
-            <h2 className="mt-5 max-w-xl font-serif text-5xl leading-[.9] tracking-[-.05em] text-[var(--ink)] sm:text-7xl">Progress becomes meaningful when it is shared.</h2>
-            <div className="mt-8 h-px w-16 bg-[var(--gold)]" />
-            <p className="mt-8 max-w-lg text-[15px] leading-8 text-[var(--muted-ink)]">From The Bahamas across West Africa and beyond, the work brings enterprise and philanthropy into the same conversation — creating practical paths toward a more connected future.</p>
-          </MotionReveal>
-          <MotionReveal delay={0.12} className="overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_70px_rgba(18,33,28,.14)]">
-            <img src="/assets/east-african-countries-2.png" alt="Map showing West African markets" className="h-full min-h-[280px] w-full object-cover" />
-            <p className="border-t border-black/10 px-6 py-4 text-[10px] uppercase tracking-[.2em] text-[var(--muted-ink)]">West Africa · In focus</p>
+        <section id="mission" className="relative overflow-hidden bg-[#dfe9e1] px-5 py-20 sm:px-8 lg:px-12 lg:py-32">
+          <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2 bg-white/35" />
+          <MotionReveal className="relative mx-auto max-w-7xl">
+            <div className="flex flex-col gap-5 border-b border-[var(--ink)]/12 pb-8 sm:pb-10 lg:flex-row lg:items-end lg:justify-between">
+              <div>
+                <MotionTag className="eyebrow text-[var(--gold-deep)]">A connected mission</MotionTag>
+                <p className="mt-4 text-[10px] uppercase tracking-[.22em] text-[var(--muted-ink)]">People · Place · Possibility</p>
+              </div>
+              <p className="max-w-sm text-sm leading-7 text-[var(--muted-ink)] lg:mb-1">
+                Enterprise and philanthropy belong in the same conversation when progress is meant to last.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-12 lg:grid-cols-[.92fr_1.08fr] lg:items-center lg:gap-20">
+              <div>
+                <h2 className="max-w-2xl font-serif text-5xl leading-[.88] tracking-[-.055em] text-[var(--ink)] sm:text-7xl">
+                  Progress becomes
+                  <br />
+                  <em className="font-normal text-[var(--gold-deep)]">meaningful</em> when it is shared.
+                </h2>
+                <div className="mt-8 flex items-center gap-4">
+                  <span className="h-px w-16 bg-[var(--gold)]" />
+                  <span className="text-[10px] uppercase tracking-[.22em] text-[var(--muted-ink)]">A mission in motion</span>
+                </div>
+                <p className="mt-8 max-w-lg text-[15px] leading-8 text-[var(--muted-ink)]">
+                  From The Bahamas across West Africa and beyond, the work brings enterprise and philanthropy into the same conversation — creating practical paths toward a more connected future.
+                </p>
+                <div className="mt-10 grid grid-cols-3 border-t border-[var(--ink)]/12 pt-5">
+                  <div>
+                    <p className="font-serif text-3xl text-[var(--ink)]">03</p>
+                    <p className="mt-1 text-[9px] uppercase tracking-[.16em] text-[var(--muted-ink)]">Regions connected</p>
+                  </div>
+                  <div>
+                    <p className="font-serif text-3xl text-[var(--ink)]">01</p>
+                    <p className="mt-1 text-[9px] uppercase tracking-[.16em] text-[var(--muted-ink)]">Shared direction</p>
+                  </div>
+                  <div>
+                    <p className="font-serif text-3xl text-[var(--ink)]">∞</p>
+                    <p className="mt-1 text-[9px] uppercase tracking-[.16em] text-[var(--muted-ink)]">Long view</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="absolute -inset-4 rounded-[2rem] border border-[var(--gold)]/35 sm:-inset-6" />
+                <div className="relative overflow-hidden rounded-[1.5rem] border border-[var(--ink)]/10 bg-white p-2 shadow-[0_24px_70px_rgba(18,33,28,.16)] sm:p-3">
+                  <div className="relative overflow-hidden rounded-[1rem] bg-[var(--sand)]">
+                    <img
+                      src="/assets/east-african-countries-2.png"
+                      alt="Map showing West African markets"
+                      className="aspect-[1.2] w-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[var(--ink)]/20 via-transparent to-[var(--gold)]/20 mix-blend-multiply" />
+                    <div className="absolute left-[22%] top-[39%] flex items-center gap-2">
+                      <span className="relative flex size-3">
+                        <span className="absolute inline-flex size-full animate-ping rounded-full bg-[var(--gold)] opacity-75" />
+                        <span className="relative inline-flex size-3 rounded-full border-2 border-white bg-[var(--gold)]" />
+                      </span>
+                      <span className="rounded-full bg-[var(--ink)]/85 px-3 py-1 text-[9px] font-semibold uppercase tracking-[.18em] text-white">West Africa</span>
+                    </div>
+                    <div className="absolute right-4 top-4 rounded-full border border-white/60 bg-white/80 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[.18em] text-[var(--ink)] backdrop-blur-md">
+                      In focus
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-3 px-2 pb-1 pt-4 sm:flex-row sm:items-center sm:justify-between sm:px-3">
+                    <p className="text-[10px] font-semibold uppercase tracking-[.2em] text-[var(--ink)]">The wider view</p>
+                    <p className="text-[10px] uppercase tracking-[.18em] text-[var(--muted-ink)]">Connected by purpose ↗</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </MotionReveal>
         </section>
 
