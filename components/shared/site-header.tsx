@@ -22,9 +22,9 @@ export function SiteHeader({ active = 'home' }: SiteHeaderProps) {
       initial={{ opacity: 0, y: -14 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.55 }}
-      className="absolute inset-x-0 top-0 z-30 px-4 py-4 sm:px-8 lg:px-12"
+      className="absolute inset-x-0 top-0 z-50 px-4 py-4 sm:px-8 lg:px-12"
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/15 bg-[#101b18]/35 px-3 py-2 shadow-2xl shadow-black/10 backdrop-blur-xl sm:px-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/25 bg-[#101b18]/75 px-3 py-2 shadow-2xl shadow-black/30 backdrop-blur-xl sm:px-4">
 
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-3 text-white">

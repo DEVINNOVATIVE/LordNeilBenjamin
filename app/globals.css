@@ -131,6 +131,10 @@
 .hero-shell::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(115deg, rgba(255,255,255,.05), transparent 35%, transparent 70%, rgba(212,173,99,.08)); mix-blend-mode: screen; }
 .hero-orb { animation: hero-float 8s ease-in-out infinite; }
 @keyframes hero-float { 0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); } 50% { transform: translate3d(0, -16px, 0) rotate(3deg); } }
+.hero-ken { animation: hero-ken 12s ease-out both; }
+@keyframes hero-ken { from { transform: scale(1); } to { transform: scale(1.06); } }
+.bg-grid { background-image: linear-gradient(rgba(255,255,255,.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.8) 1px, transparent 1px); background-size: 44px 44px; }
+.grain { opacity: .06; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E"); }
 .motion-reveal { will-change: opacity, transform; }
 .motion-tag { will-change: opacity, transform; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }
